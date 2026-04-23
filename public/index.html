@@ -156,12 +156,12 @@
         </div>
 
         <!-- Bottom Right Banner -->
-        <div class="fixed bottom-12 right-12 z-[60]">
-            <div class="bg-primary text-black px-8 py-5 flex items-center gap-6 shadow-[0_20px_50px_rgba(243,196,26,0.3)] group animate-pulse">
-                <span class="font-headline font-black text-sm uppercase tracking-widest flex items-center gap-3">
+        <div id="discount-banner" class="fixed bottom-12 right-12 z-[60] transition-all duration-500 origin-bottom-right">
+            <div class="bg-primary text-black px-8 py-5 flex items-center gap-6 shadow-[0_20px_50px_rgba(243,196,26,0.3)] group animate-pulse hover:animate-none cursor-pointer">
+                <span id="open-discount-modal" class="font-headline font-black text-sm uppercase tracking-widest flex items-center gap-3 w-full">
                     <span class="text-3xl">☕</span> TU 8% DE DESCUENTO
                 </span>
-                <button class="hover:rotate-180 transition-transform duration-500"><span class="material-symbols-outlined text-xl">close</span></button>
+                <button id="close-discount-banner" class="hover:rotate-180 transition-transform duration-500 z-10"><span class="material-symbols-outlined text-xl">close</span></button>
             </div>
         </div>
     </header>
@@ -772,8 +772,103 @@
         </div>
     </footer>
 
+    <!-- Discount Modal -->
+    <div id="discount-modal" class="fixed inset-0 z-[100] hidden items-center justify-center opacity-0 transition-opacity duration-300">
+        <!-- Backdrop -->
+        <div id="discount-modal-backdrop" class="absolute inset-0 bg-black/80 backdrop-blur-md cursor-pointer"></div>
+        
+        <!-- Modal Content -->
+        <div class="relative bg-[#070b13] border-4 border-primary p-10 md:p-14 max-w-lg w-full mx-4 shadow-[20px_20px_0_0_#f3c41a] transform scale-95 transition-transform duration-300" id="discount-modal-content">
+            <button id="close-discount-modal" class="absolute top-6 right-6 text-white/50 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
+            
+            <div class="text-center mb-10">
+                <div class="inline-block px-4 py-1 bg-white text-black font-mono text-[10px] uppercase tracking-[0.3em] mb-6 font-bold">CLUB MADNESS</div>
+                <h3 class="font-headline font-black text-5xl md:text-6xl uppercase tracking-tighter text-white leading-none mb-4">
+                    TU <span class="text-primary italic">8%</span><br>DE DESCUENTO
+                </h3>
+                <p class="font-mono text-xs text-white/50 uppercase tracking-widest leading-relaxed">
+                    Únete al club y recibe un 8% de descuento inmediato en tu primera compra de café de especialidad.
+                </p>
+            </div>
 
+            <form id="discount-form" class="space-y-6">
+                <div>
+                    <input type="text" placeholder="TU NOMBRE" required
+                           class="w-full bg-white/5 border-2 border-white/10 px-6 py-4 font-mono text-sm text-white placeholder:text-white/30 focus:border-primary focus:ring-0 focus:outline-none transition-colors uppercase tracking-widest">
+                </div>
+                <div>
+                    <input type="email" placeholder="TU EMAIL" required
+                           class="w-full bg-white/5 border-2 border-white/10 px-6 py-4 font-mono text-sm text-white placeholder:text-white/30 focus:border-primary focus:ring-0 focus:outline-none transition-colors uppercase tracking-widest">
+                </div>
+                <button type="submit" 
+                        class="w-full bg-primary text-black font-headline font-black py-5 px-8 uppercase tracking-widest text-xl hover:bg-white transition-colors duration-300 shadow-[8px_8px_0_0_#fff] hover:shadow-none hover:translate-x-2 hover:translate-y-2">
+                    QUIERO MI CÓDIGO
+                </button>
+                <p class="text-center font-mono text-[9px] text-white/30 uppercase tracking-widest mt-6">
+                    NO HACEMOS SPAM. SOLO BUEN CAFÉ.
+                </p>
+            </form>
+        </div>
+    </div>
     <script>
+        // Modal & Banner Logic
+        const discountBanner = document.getElementById('discount-banner');
+        const openDiscountBtn = document.getElementById('open-discount-modal');
+        const closeBannerBtn = document.getElementById('close-discount-banner');
+        
+        const discountModal = document.getElementById('discount-modal');
+        const discountModalContent = document.getElementById('discount-modal-content');
+        const closeDiscountModalBtn = document.getElementById('close-discount-modal');
+        const discountModalBackdrop = document.getElementById('discount-modal-backdrop');
+
+        // Close Banner
+        closeBannerBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent opening modal
+            discountBanner.style.transform = 'scale(0)';
+            discountBanner.style.opacity = '0';
+            setTimeout(() => {
+                discountBanner.style.display = 'none';
+            }, 500);
+        });
+
+        // Open Modal
+        openDiscountBtn.addEventListener('click', () => {
+            discountModal.classList.remove('hidden');
+            discountModal.classList.add('flex');
+            // Trigger reflow
+            void discountModal.offsetWidth;
+            discountModal.classList.remove('opacity-0');
+            discountModalContent.classList.remove('scale-95');
+        });
+
+        // Close Modal Function
+        const closeModal = () => {
+            discountModal.classList.add('opacity-0');
+            discountModalContent.classList.add('scale-95');
+            setTimeout(() => {
+                discountModal.classList.add('hidden');
+                discountModal.classList.remove('flex');
+            }, 300);
+        };
+
+        // Close Modal Event Listeners
+        closeDiscountModalBtn.addEventListener('click', closeModal);
+        discountModalBackdrop.addEventListener('click', closeModal);
+
+        // Form Submit Simulation
+        document.getElementById('discount-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            btn.textContent = "¡CÓDIGO ENVIADO!";
+            btn.style.backgroundColor = "white";
+            setTimeout(() => {
+                closeModal();
+                discountBanner.style.display = 'none'; // Hide banner permanently after signup
+            }, 2000);
+        });
+
         // Smooth scroll implementation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
