@@ -157,11 +157,11 @@
 
         <!-- Bottom Right Banner -->
         <div id="discount-banner" class="fixed bottom-12 right-12 z-[60] transition-all duration-500 origin-bottom-right">
-            <div class="bg-primary text-black px-8 py-5 flex items-center gap-6 shadow-[0_20px_50px_rgba(243,196,26,0.3)] group animate-pulse hover:animate-none cursor-pointer">
-                <span id="open-discount-modal" class="font-headline font-black text-sm uppercase tracking-widest flex items-center gap-3 w-full">
+            <div id="open-discount-modal" class="bg-primary text-black px-8 py-5 flex items-center gap-6 shadow-[0_20px_50px_rgba(243,196,26,0.3)] group animate-pulse hover:animate-none cursor-pointer">
+                <span class="font-headline font-black text-sm uppercase tracking-widest flex items-center gap-3 w-full pointer-events-none">
                     <span class="text-3xl">☕</span> TU 8% DE DESCUENTO
                 </span>
-                <button id="close-discount-banner" class="hover:rotate-180 transition-transform duration-500 z-10"><span class="material-symbols-outlined text-xl">close</span></button>
+                <button id="close-discount-banner" class="hover:rotate-180 transition-transform duration-500 z-10 relative"><span class="material-symbols-outlined text-xl pointer-events-none">close</span></button>
             </div>
         </div>
     </header>
