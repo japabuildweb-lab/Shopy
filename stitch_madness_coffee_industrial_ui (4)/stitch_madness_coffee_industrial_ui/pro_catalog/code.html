@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MADNESS_COFFEE | CATALOG</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#244d4e",
+                        "on-primary-fixed": "#1c1d00",
+                        "outline-variant": "#484831",
+                        "surface-variant": "#353535",
+                        "surface-tint": "#cace00",
+                        "surface-container-highest": "#353535",
+                        "surface-container": "#1f1f1f",
+                        "secondary-container": "#474746",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "inverse-surface": "#e2e2e2",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-primary": "#313300",
+                        "inverse-primary": "#606200",
+                        "error-container": "#93000a",
+                        "surface-container-high": "#2a2a2a",
+                        "on-surface-variant": "#c9c8aa",
+                        "surface-container-low": "#1b1b1b",
+                        "on-tertiary": "#083638",
+                        "secondary": "#c8c6c5",
+                        "surface": "#131313",
+                        "on-secondary-fixed-variant": "#474746",
+                        "primary-fixed": "#e6eb00",
+                        "on-surface": "#e2e2e2",
+                        "on-primary-container": "#666800",
+                        "on-background": "#e2e2e2",
+                        "on-tertiary-container": "#436b6c",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "primary-fixed-dim": "#cace00",
+                        "outline": "#939277",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#a4cecf",
+                        "on-secondary": "#303030",
+                        "background": "#131313",
+                        "on-primary-fixed-variant": "#484a00",
+                        "on-secondary-container": "#b7b5b4",
+                        "surface-bright": "#393939",
+                        "tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#002021",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131313",
+                        "tertiary-container": "#c0eaeb",
+                        "primary-container": "#e6eb00",
+                        "tertiary-fixed": "#c0eaeb",
+                        "primary": "#ffffff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "inverse-on-surface": "#303030"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0rem",
+                        "lg": "0rem",
+                        "xl": "0rem",
+                        "full": "0rem"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": [
+                            "Space Grotesk",
+                            "sans-serif"
+                        ],
+                        "body": [
+                            "Inter",
+                            "sans-serif"
+                        ],
+                        "label": [
+                            "Inter",
+                            "sans-serif"
+                        ]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .text-primary-signal { color: #FAFF00; }
+        .bg-primary-signal { background-color: #FAFF00; }
+        .border-primary-signal { border-color: #FAFF00; }
+        .industrial-glow { box-shadow: 0 0 30px rgba(250,255,0,0.1); }
+        .ghost-border { border: 2px solid theme('colors.outline-variant'); opacity: 0.15; }
+        .frosted-glass { background-color: rgba(31,31,31,0.6); backdrop-filter: blur(20px); }
+        .tech-grid { background-image: radial-gradient(theme('colors.outline-variant') 1px, transparent 1px); background-size: 24px 24px; opacity: 0.1; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body antialiased min-h-screen flex flex-col selection:bg-[#FAFF00] selection:text-[#131313]">
+<!-- TopAppBar -->
+<header class="bg-[#131313] dark:bg-[#131313] docked full-width top-0 border-none bg-[#1c1c1c] shadow-[0_0_30px_rgba(250,255,0,0.1)] sticky z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-none">
+<button class="scale-95 active:scale-100 hover:bg-[#FAFF00] hover:text-[#131313] transition-colors duration-100 p-2 text-[#FAFF00] dark:text-[#FAFF00]">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="text-3xl font-black text-[#FAFF00] tracking-tighter font-['Space_Grotesk'] font-black uppercase tracking-tighter">MADNESS_COFFEE</div>
+<button class="scale-95 active:scale-100 hover:bg-[#FAFF00] hover:text-[#131313] transition-colors duration-100 p-2 text-[#FAFF00] dark:text-[#FAFF00]">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+<!-- Local Navigation -->
+<nav class="flex overflow-x-auto no-scrollbar border-t border-surface-container-low px-6 py-2 gap-6 bg-surface">
+<a class="text-[#FAFF00] border-b-4 border-[#FAFF00] pb-2 font-label text-sm uppercase tracking-widest whitespace-nowrap" href="#">COFFEE_SYSTEMS</a>
+<a class="text-white/60 hover:text-[#FAFF00] hover:bg-[#FAFF00] hover:text-[#131313] transition-colors duration-100 pb-2 font-label text-sm uppercase tracking-widest whitespace-nowrap" href="#">EQUIPMENT</a>
+<a class="text-white/60 hover:text-[#FAFF00] hover:bg-[#FAFF00] hover:text-[#131313] transition-colors duration-100 pb-2 font-label text-sm uppercase tracking-widest whitespace-nowrap" href="#">MERCHANDISE</a>
+<a class="text-white/60 hover:text-[#FAFF00] hover:bg-[#FAFF00] hover:text-[#131313] transition-colors duration-100 pb-2 font-label text-sm uppercase tracking-widest whitespace-nowrap" href="#">PACKS</a>
+</nav>
+</header>
+<main class="flex-grow relative z-10">
+<div class="absolute inset-0 tech-grid pointer-events-none"></div>
+<!-- Hero / Featured Grid -->
+<section class="p-6">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+<!-- Featured Product: Bento Large -->
+<article class="col-span-1 lg:col-span-2 bg-surface-container-high h-[600px] relative overflow-hidden group">
+<img alt="Industrial coffee roaster with bright yellow accents in a dark warehouse" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity group-hover:scale-105 transition-transform duration-700" data-alt="close up of roasted coffee beans dropping from an industrial metal chute with harsh directional lighting and high contrast shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnfKrhf74aHw8fqzm6t7DF1q_wqi-ZU83dtoHYw_nQTXKgJb2GQ2tKJjjwgonI0p0Qv7caatSoLuuNp1B7jDmq9EWPImU6D82nAP-3EwZvqTUy9nHJlWxi3htcbMNnSwgz7WrmpQyewWULifImaNYXY6wRgxr-8FUKNRTSrcAn_LhRuhJYBUFUeFD9Id65iaEcvsu6siO09RmFPE0Fh0-FzxreLoIoMwaGj4wpQsH7EAfl0S7iTudCU4rF88LaSuvi6seU9SfoSQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full flex flex-col justify-end">
+<div class="inline-flex items-center gap-2 bg-surface-container-highest px-3 py-1 mb-4 w-max border-l-4 border-primary-signal">
+<span class="material-symbols-outlined text-[16px] text-primary-signal" data-icon="bolt">bolt</span>
+<span class="font-label text-xs uppercase tracking-widest text-on-surface">SYS_FEATURED</span>
+</div>
+<h1 class="font-headline text-5xl md:text-7xl font-black uppercase text-primary-signal leading-none mb-4 w-full break-words">VANTABLACK<br/>ROAST</h1>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 w-full">
+<p class="font-body text-base text-on-surface-variant max-w-md">HIGH-INTENSITY ESPRESSO BLEND. DESIGNED FOR MAXIMUM EXTRACTION. 0% COMPROMISE.</p>
+<button class="bg-primary-signal text-on-primary font-headline font-bold uppercase px-8 py-4 hover:bg-white hover:text-black transition-colors shrink-0 flex items-center gap-2">
+                                INIT_PURCHASE <span class="material-symbols-outlined" data-icon="arrow_forward_ios">arrow_forward_ios</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Packs Focus: Bento Small Stack -->
+<div class="col-span-1 flex flex-col gap-4 h-[600px]">
+<article class="bg-surface-container flex-1 relative overflow-hidden group">
+<img alt="Three sleek black coffee sample bags with neon yellow labels" class="absolute inset-0 w-full h-full object-cover opacity-70 grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="three matte black coffee bags with neon yellow labels lined up diagonally on a dark metallic surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARxfgxsKSX-SLrmJVRpLW8m-nwASCIBnQkZUgWiAa4zf9SRvQjfrm-TTGxDW_9RBF4_ELZcXcCwsLjv5SG3WdervPb1e8vAXJZe9rYP2JnsPZF8qxzk12fBox2JaJQYHqOH64DOTuhRxeQiVmFoMmY_-BoU7S_LEznAncdBCSdccbnzvmwDueeCUlDnWiI71Y5iVPLbzx95nTK9H4ZzXN-IcmBXdbg45lSm7z8ZJzYAXWkut1rtE6gm-4MSJDEzLFCJoM_wntjgw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-high to-transparent"></div>
+<div class="absolute bottom-0 p-6 w-full">
+<h2 class="font-headline text-2xl font-bold uppercase text-on-surface mb-1">STARTER_KIT</h2>
+<p class="font-label text-xs text-primary-signal font-mono mb-4">3 x 90G SAMPLES // $24.00</p>
+<button class="w-full border-2 border-outline text-on-surface font-headline font-bold uppercase py-2 hover:bg-white hover:text-black hover:border-white transition-colors">VIEW_KIT</button>
+</div>
+</article>
+<article class="bg-surface-container-low flex-1 p-6 flex flex-col justify-between border-t-4 border-surface-container-highest">
+<div>
+<span class="font-label text-xs uppercase text-on-surface-variant mb-2 block">FILTER_ACTIVE</span>
+<h3 class="font-headline text-3xl font-bold uppercase text-on-surface">SINGLE<br/>ORIGIN</h3>
+</div>
+<div class="flex items-center justify-between text-primary-signal">
+<span class="font-mono text-sm">EXPLORE_INDEX</span>
+<span class="material-symbols-outlined" data-icon="east">east</span>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Product Grid - Beans -->
+<section class="px-6 py-12">
+<div class="flex justify-between items-end mb-8 border-b-2 border-surface-container-high pb-4">
+<h2 class="font-headline text-4xl font-bold uppercase text-on-surface">COFFEE_INDEX</h2>
+<div class="hidden md:flex gap-4">
+<button class="text-primary-signal font-label text-sm font-bold uppercase tracking-wider">ALL</button>
+<button class="text-on-surface-variant hover:text-primary-signal font-label text-sm uppercase tracking-wider transition-colors">ESPRESSO</button>
+<button class="text-on-surface-variant hover:text-primary-signal font-label text-sm uppercase tracking-wider transition-colors">FILTER</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Product Card 1 -->
+<article class="flex flex-col group">
+<div class="bg-surface-container aspect-square mb-4 relative overflow-hidden flex items-center justify-center p-8">
+<div class="absolute top-4 left-4 bg-surface-container-highest px-2 py-1 z-10">
+<span class="font-mono text-xs text-primary-signal">ID: 001</span>
+</div>
+<img alt="Matte black coffee bag" class="w-full h-full object-contain mix-blend-screen scale-90 group-hover:scale-100 transition-transform duration-300" data-alt="solitary matte black coffee bag standing upright on a raw concrete floor with a single harsh spotlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzgzddRysF4AYg4ao26rMMXesMy9EQUvBwwfTfXMr2aMvP6c-w8fiLKYbf2f8-ppUfIIfd-7mxpsxixk5oyjGfETEc1440L78N-TrFjhlTtwhdjAiOwun0DnNCvC0Cc6TQfyct3doHpx22JCNGCoDnYY8RC1fH49s3Ve3xFLM4qrBY0ehpmEYgcUbyjULDzq_BCtI4FrYNKdR4O_tP0ei6nUy185J1VoPvQOnPxjPpS8pwkfL2XbbpIdLSGWeE5egMPdzmyQZWGg"/>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl font-bold uppercase text-on-surface leading-tight">NEON_PULSE</h3>
+<span class="font-mono text-lg text-primary-signal">$22</span>
+</div>
+<p class="font-label text-xs text-on-surface-variant mb-4 uppercase">WASHED ETHIOPIA // FLORAL, CITRUS</p>
+<button class="w-full border-2 border-surface-container-high text-on-surface font-headline font-bold uppercase py-3 hover:bg-primary-signal hover:text-on-primary hover:border-primary-signal transition-colors mt-auto">ADD_TO_CART</button>
+</article>
+<!-- Product Card 2 -->
+<article class="flex flex-col group">
+<div class="bg-surface-container aspect-square mb-4 relative overflow-hidden flex items-center justify-center p-8 border-l-2 border-primary-signal">
+<div class="absolute top-4 left-4 bg-surface-container-highest px-2 py-1 z-10">
+<span class="font-mono text-xs text-primary-signal">ID: 002</span>
+</div>
+<img alt="Matte black coffee bag" class="w-full h-full object-contain mix-blend-screen scale-90 group-hover:scale-100 transition-transform duration-300" data-alt="solitary matte black coffee bag standing upright on a raw concrete floor with a single harsh spotlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCudT6-_TTKcHDIdNuC1oBfT9vEehB7m9Hv_6Ns7IJ20ijYtEaBdT_LlFWGqSZJpNUtmQ39_TOpoxh6KrQJ1SXUS5Ys7MqrGHubCsD3APxuoPlCCaFhVScNZcf-FYiT5j2eAG4CK2okABVV_fvmVQbELmgWgVCvDi_67niO50ps_hd3VKyUjnzL9Jh3-Aa6dwmL9dDwcWQJRpbhOrDHJSdUMRTuXmF0Qrez8t0vuPIzNZvWmmoGi45n-1X-HG0sIL93hOerybJz8Q"/>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl font-bold uppercase text-on-surface leading-tight">STATIC_VOID</h3>
+<span class="font-mono text-lg text-primary-signal">$20</span>
+</div>
+<p class="font-label text-xs text-on-surface-variant mb-4 uppercase">NATURAL BRAZIL // CHOCOLATE, NUT</p>
+<button class="w-full border-2 border-surface-container-high text-on-surface font-headline font-bold uppercase py-3 hover:bg-primary-signal hover:text-on-primary hover:border-primary-signal transition-colors mt-auto">ADD_TO_CART</button>
+</article>
+<!-- Product Card 3 -->
+<article class="flex flex-col group">
+<div class="bg-surface-container aspect-square mb-4 relative overflow-hidden flex items-center justify-center p-8">
+<div class="absolute top-4 left-4 bg-surface-container-highest px-2 py-1 z-10">
+<span class="font-mono text-xs text-primary-signal">ID: 003</span>
+</div>
+<img alt="Matte black coffee bag" class="w-full h-full object-contain mix-blend-screen scale-90 group-hover:scale-100 transition-transform duration-300" data-alt="solitary matte black coffee bag standing upright on a raw concrete floor with a single harsh spotlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9_1SoeSNbHiCEYIwNVM9WKCDOOpo8hTVJwC3cqWjb_GBjM2fhkx08ueAeElWNQaWntJ9Im28-q2K3oTgurK95offIeT898SV3aqaeex85ArW2Lc4MsCf6_KT1YH5N6nmfZinCb_U7frFAMaDCzCLlLUaGmCt_zyiiFwfc0lyplpXzWMxCcJiJdgWVFh3AXyiCVZ5hP0ndI07WNV9f2oOtZCJoXrqLgm3UGjoA901jjBDWTUl7ykv2yTNz9iFuvZ3nvjTYd-UDTQ"/>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl font-bold uppercase text-on-surface leading-tight">GRID_LOCK</h3>
+<span class="font-mono text-lg text-primary-signal">$26</span>
+</div>
+<p class="font-label text-xs text-on-surface-variant mb-4 uppercase">HONEY COLOMBIA // CARAMEL, APPLE</p>
+<button class="w-full border-2 border-surface-container-high text-on-surface font-headline font-bold uppercase py-3 hover:bg-primary-signal hover:text-on-primary hover:border-primary-signal transition-colors mt-auto">ADD_TO_CART</button>
+</article>
+<!-- Product Card 4 -->
+<article class="flex flex-col group">
+<div class="bg-surface-container aspect-square mb-4 relative overflow-hidden flex items-center justify-center p-8">
+<div class="absolute top-4 left-4 bg-surface-container-highest px-2 py-1 z-10">
+<span class="font-mono text-xs text-primary-signal">ID: 004</span>
+</div>
+<div class="absolute inset-0 bg-black/40 z-0"></div>
+<span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-headline text-2xl text-on-surface z-20 uppercase font-black tracking-widest border-y-2 border-white py-2 bg-surface-container-highest px-4">OUT_OF_STOCK</span>
+<img alt="Matte black coffee bag" class="w-full h-full object-contain mix-blend-screen scale-90 grayscale opacity-50 z-10" data-alt="solitary matte black coffee bag standing upright on a raw concrete floor with a single harsh spotlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi1HcBZ12ljnXL5BUqNDXtkTHvvujOr6YeGFzYzKe1Q0BWtoc3q77KeRnvTlG2hB8AbHDVA6l05dpSc9dKZ_4AZMEUdbAH0F6rH2Wk7hnaLRnyFW8JxSxF6lMRJsQ6RBi7VOI0q56pNB4lnicKSy5-IteqPsUAYtjVNlR5umjf5Oe5PcIm9j5GT72Cn83RzC07zjpVo4HeKRnhI5LrR1RV16NvY282fjQgKSu80rkGuZFi6aM69Wvw5Ic1IxbQ5elNoHMKgDr6HA"/>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl font-bold uppercase text-on-surface-variant leading-tight line-through">OVERDRIVE</h3>
+<span class="font-mono text-lg text-on-surface-variant line-through">$30</span>
+</div>
+<p class="font-label text-xs text-on-surface-variant/50 mb-4 uppercase">WASHED KENYA // BERRY, ACIDITY</p>
+<button class="w-full bg-surface-container-low text-on-surface-variant font-headline font-bold uppercase py-3 cursor-not-allowed mt-auto border-2 border-surface-container-low">NOTIFY_RESTOCK</button>
+</article>
+</div>
+</section>
+<!-- Hardware & Merch Banner Grid -->
+<section class="px-6 pb-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Hardware -->
+<a class="block bg-surface-container-high h-[400px] relative group overflow-hidden border-t-8 border-surface-container-highest" href="#">
+<img alt="High-end espresso machine parts" class="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-40 group-hover:scale-105 transition-transform duration-700" data-alt="close up macro shot of polished metal espresso machine parts with stark lighting and deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6VGJu1ELA24IaJPSXe-FXi4YPSwn_qxWEWbCmeTqJhYzOuEPR31hFS9dx0r9DpnP2KQv62fxFeyi5crzjNU0c27l7-0WKANiErMO-FJ6RDewP9N8LRCkUJpL9tVvZAWle7Zaj4IXgrnkVZAUYyRVD1pUZjNC9edMWND332e1dQWSm0w1xf89qX7H-OmPqPyjKzBYjo6fapM1QOXYecXTvxxG_cUwVMg6LBBwqepP3vk-x9XB5u5Zm11zzRfpC6UX_nJpTECmcxg"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface to-transparent"></div>
+<div class="relative h-full p-8 flex flex-col justify-center">
+<span class="font-mono text-sm text-primary-signal mb-2">CATEGORY_02</span>
+<h2 class="font-headline text-5xl font-black uppercase text-on-surface mb-4">HARDWARE</h2>
+<div class="inline-flex items-center gap-2 text-on-surface font-label text-sm uppercase tracking-widest border-b border-on-surface pb-1 w-max group-hover:text-primary-signal group-hover:border-primary-signal transition-colors">
+                            BROWSE_TOOLS <span class="material-symbols-outlined text-[16px]" data-icon="terminal">terminal</span>
+</div>
+</div>
+</a>
+<!-- Merch -->
+<a class="block bg-surface-container h-[400px] relative group overflow-hidden border-t-8 border-primary-signal" href="#">
+<img alt="Black graphic t-shirt with yellow text" class="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-50 group-hover:scale-105 transition-transform duration-700" data-alt="a stack of neatly folded heavy cotton black t-shirts with fluorescent yellow industrial typography prints visible on the edges" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKfqfZxJ908aQZevcuw-6652GQ_R0VR401e6tICwWeWI6DWPFb-AFUJg81hh8OwTMWaValxLduh6TlruQq6lH8zyDeLpOwjmCWay_zPN6yUaUqQrZx9257oZE5W__nlen_vVZg-ZPjfPjDiOzx6vd18hEIfmOaAm6JiZdiqdJZjlTOTVsDlnH8_jAeTsAtfoeF_TKl5VeTSJ_zwfh2N8XiMStcUPYI_uxi3v4E_wj6DPSF_GbpZ3c_hxHO-PIDF3TwYouevjnbqg"/>
+<div class="absolute inset-0 bg-gradient-to-l from-surface to-transparent"></div>
+<div class="relative h-full p-8 flex flex-col justify-center items-end text-right">
+<span class="font-mono text-sm text-primary-signal mb-2">CATEGORY_03</span>
+<h2 class="font-headline text-5xl font-black uppercase text-on-surface mb-4">APPAREL</h2>
+<div class="inline-flex items-center gap-2 text-on-surface font-label text-sm uppercase tracking-widest border-b border-on-surface pb-1 w-max group-hover:text-primary-signal group-hover:border-primary-signal transition-colors flex-row-reverse">
+<span class="material-symbols-outlined text-[16px]" data-icon="terminal">terminal</span> BROWSE_UNIFORMS
+                        </div>
+</div>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#131313] dark:bg-[#131313] docked full-width bottom-0 bg-[#0a0a0a] flat no shadows mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center w-full px-6 py-12 gap-8">
+<div class="text-lg font-black text-[#FAFF00] font-['Inter'] font-mono text-[10px] uppercase tracking-[0.2em]">MADNESS_COFFEE</div>
+<nav class="flex flex-wrap gap-6 text-[#FAFF00] dark:text-[#FAFF00]">
+<a class="text-[#FAFF00] opacity-80 hover:opacity-100 font-['Inter'] font-mono text-[10px] uppercase tracking-[0.2em] hover:text-[#FAFF00] hover:underline underline-offset-8" href="#">CATALOG</a>
+<a class="text-white/40 opacity-80 hover:opacity-100 font-['Inter'] font-mono text-[10px] uppercase tracking-[0.2em] hover:text-[#FAFF00] hover:underline underline-offset-8" href="#">LOCATOR</a>
+<a class="text-white/40 opacity-80 hover:opacity-100 font-['Inter'] font-mono text-[10px] uppercase tracking-[0.2em] hover:text-[#FAFF00] hover:underline underline-offset-8" href="#">ARCHIVE</a>
+<a class="text-white/40 opacity-80 hover:opacity-100 font-['Inter'] font-mono text-[10px] uppercase tracking-[0.2em] hover:text-[#FAFF00] hover:underline underline-offset-8" href="#">LEGAL</a>
+</nav>
+<div class="text-[#FAFF00] dark:text-[#FAFF00] font-['Inter'] font-mono text-[10px] uppercase tracking-[0.2em]">
+                ©2024 MADNESS_COFFEE_SYSTEMS [ALL_RIGHTS_RESERVED]
+            </div>
+</div>
+</footer>
+</body></html>

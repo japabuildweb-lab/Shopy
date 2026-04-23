@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Madness Coffee - Locator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;900&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#244d4e",
+                        "on-primary-fixed": "#1c1d00",
+                        "outline-variant": "#484831",
+                        "surface-variant": "#353535",
+                        "surface-tint": "#cace00",
+                        "surface-container-highest": "#353535",
+                        "surface-container": "#1f1f1f",
+                        "secondary-container": "#474746",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "inverse-surface": "#e2e2e2",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-primary": "#313300",
+                        "inverse-primary": "#606200",
+                        "error-container": "#93000a",
+                        "surface-container-high": "#2a2a2a",
+                        "on-surface-variant": "#c9c8aa",
+                        "surface-container-low": "#1b1b1b",
+                        "on-tertiary": "#083638",
+                        "secondary": "#c8c6c5",
+                        "surface": "#131313",
+                        "on-secondary-fixed-variant": "#474746",
+                        "primary-fixed": "#e6eb00",
+                        "on-surface": "#e2e2e2",
+                        "on-primary-container": "#666800",
+                        "on-background": "#e2e2e2",
+                        "on-tertiary-container": "#436b6c",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "primary-fixed-dim": "#cace00",
+                        "outline": "#939277",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#a4cecf",
+                        "on-secondary": "#303030",
+                        "background": "#131313",
+                        "on-primary-fixed-variant": "#484a00",
+                        "on-secondary-container": "#b7b5b4",
+                        "surface-bright": "#393939",
+                        "tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#002021",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131313",
+                        "tertiary-container": "#c0eaeb",
+                        "primary-container": "#e6eb00",
+                        "tertiary-fixed": "#c0eaeb",
+                        "primary": "#ffffff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "inverse-on-surface": "#303030"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-[#131313] dark:bg-[#131313] docked full-width top-0 border-none bg-[#1c1c1c] shadow-[0_0_30px_rgba(250,255,0,0.1)] z-50 relative">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-none">
+<button class="text-[#FAFF00] dark:text-[#FAFF00] hover:bg-[#FAFF00] hover:text-[#131313] transition-colors duration-100 scale-95 active:scale-100 p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-['Space_Grotesk'] font-black uppercase tracking-tighter text-3xl text-[#FAFF00]">MADNESS_COFFEE</h1>
+<button class="text-[#FAFF00] dark:text-[#FAFF00] hover:bg-[#FAFF00] hover:text-[#131313] transition-colors duration-100 scale-95 active:scale-100 p-2">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col md:flex-row relative">
+<!-- Map Area -->
+<section class="flex-grow relative min-h-[442px] md:min-h-screen bg-surface-container-lowest overflow-hidden">
+<!-- Simulated Map Image -->
+<img alt="Map View" class="absolute inset-0 w-full h-full object-cover opacity-30 grayscale contrast-150" data-alt="High contrast, dark mode styled map of an urban grid showing street level details with minimal color, mostly black and dark grey tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUojDQPyv5m5mf3D5HYhAiD3AXX7NgPDc4SvnA7BJpr73Wv8Kv-1cgUgxJl4_b28CdP0f-lsXzONJERpSACe8CzNcOhRgetsgTqmOSeUScpVaUO2rWBZnA8u7GFx4QhFKn0v9gHdWZQf0IPCXmHePr31G_dmjqOdZ4Xu0a9pfe2E2rpNYYRHEL1GbCQakbPHmCxft7OxNvnzBu8QIZLMg40yRUFTI5O_zleq_fkOi_qiO1ib6grGxzRdx8RygIHxcVWM8lfCddow"/>
+<!-- Map Overlay for Dark Theme -->
+<div class="absolute inset-0 bg-background/80 mix-blend-multiply pointer-events-none"></div>
+<!-- Technical Grid Overlay -->
+<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9IiM0ODQ4MzEiIGZpbGwtb3BhY2l0eT0iMC4yIi8+PC9zdmc+')] pointer-events-none"></div>
+<!-- Map Controls -->
+<div class="absolute top-6 right-6 flex flex-col gap-2 z-10">
+<button class="w-12 h-12 bg-surface-container-high border-b-2 border-primary-container text-on-surface hover:bg-primary-container hover:text-on-primary-container transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="w-12 h-12 bg-surface-container-high border-b-2 border-primary-container text-on-surface hover:bg-primary-container hover:text-on-primary-container transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<button class="w-12 h-12 mt-4 bg-surface-container-highest border-b-2 border-primary-container text-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined">my_location</span>
+</button>
+</div>
+<!-- Map Pins (Simulated Locations) -->
+<!-- Location 1 (Active) -->
+<div class="absolute top-[30%] left-[40%] transform -translate-x-1/2 -translate-y-1/2 z-20 cursor-pointer group">
+<div class="relative flex items-center justify-center">
+<span class="absolute inline-flex h-full w-full animate-ping bg-primary-container opacity-20"></span>
+<span class="material-symbols-outlined text-4xl text-primary-container drop-shadow-[0_0_15px_rgba(230,235,0,0.8)]" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+<!-- Other Locations -->
+<div class="absolute top-[45%] left-[60%] transform -translate-x-1/2 -translate-y-1/2 z-10 cursor-pointer hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl text-outline-variant hover:text-primary-container" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="absolute top-[20%] left-[70%] transform -translate-x-1/2 -translate-y-1/2 z-10 cursor-pointer hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl text-outline-variant hover:text-primary-container" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="absolute top-[60%] left-[30%] transform -translate-x-1/2 -translate-y-1/2 z-10 cursor-pointer hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl text-outline-variant hover:text-primary-container" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="absolute top-[75%] left-[55%] transform -translate-x-1/2 -translate-y-1/2 z-10 cursor-pointer hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl text-outline-variant hover:text-primary-container" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="absolute top-[85%] left-[20%] transform -translate-x-1/2 -translate-y-1/2 z-10 cursor-pointer hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl text-outline-variant hover:text-primary-container" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="absolute top-[15%] left-[25%] transform -translate-x-1/2 -translate-y-1/2 z-10 cursor-pointer hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl text-outline-variant hover:text-primary-container" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="absolute top-[55%] left-[85%] transform -translate-x-1/2 -translate-y-1/2 z-10 cursor-pointer hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl text-outline-variant hover:text-primary-container" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="absolute top-[80%] left-[80%] transform -translate-x-1/2 -translate-y-1/2 z-10 cursor-pointer hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl text-outline-variant hover:text-primary-container" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</section>
+<!-- Sidebar / Location Details -->
+<aside class="w-full md:w-[450px] bg-surface border-t-2 md:border-t-0 md:border-l-2 border-surface-container-high flex flex-col z-30 shadow-[-20px_0_30px_rgba(0,0,0,0.5)]">
+<!-- Search Header -->
+<div class="p-6 bg-surface-container-low border-b-2 border-surface-container-high">
+<h2 class="font-headline font-bold text-2xl uppercase tracking-tight mb-6">Store Locator</h2>
+<div class="relative bg-surface-container-highest border-b-2 border-primary-container group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 transform -translate-y-1/2 text-outline-variant group-focus-within:text-primary-container transition-colors">search</span>
+<input class="w-full bg-transparent border-none text-on-surface font-label text-sm uppercase py-4 pl-12 pr-4 focus:ring-0 placeholder-outline-variant" placeholder="ENTER CITY OR ZIP..." type="text"/>
+</div>
+</div>
+<!-- Location List -->
+<div class="flex-grow overflow-y-auto bg-background">
+<!-- Location Item (Active) -->
+<div class="bg-surface-container p-6 mb-2 border-l-4 border-primary-container cursor-pointer transition-colors group">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline font-bold text-xl uppercase tracking-tight text-primary-container group-hover:text-primary-fixed-dim transition-colors">Sector 7 - Central</h3>
+<span class="bg-surface-container-highest text-on-surface-variant font-label text-xs px-2 py-1 uppercase tracking-widest border border-outline-variant/30">Open</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant mb-4 uppercase">124 Industrial Ave, Docks District<br/>New Angeles, NA 90210</p>
+<div class="flex gap-4">
+<button class="flex-1 bg-primary-container text-on-primary-container font-label text-sm uppercase font-bold py-3 hover:bg-white hover:text-black transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">directions</span>
+                            Route
+                        </button>
+<button class="flex-1 border-2 border-outline-variant text-on-surface font-label text-sm uppercase font-bold py-3 hover:bg-white hover:text-black hover:border-white transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">info</span>
+                            Details
+                        </button>
+</div>
+</div>
+<!-- Location Item (Inactive) -->
+<div class="bg-surface-container-low p-6 mb-2 border-l-4 border-transparent hover:border-outline-variant cursor-pointer transition-all">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline font-bold text-lg uppercase tracking-tight text-on-surface">Terminal B - Hub</h3>
+<span class="bg-surface-container-lowest text-outline-variant font-label text-xs px-2 py-1 uppercase tracking-widest">Closed</span>
+</div>
+<p class="font-body text-sm text-outline-variant mb-0 uppercase">45 Transport Way, Level 2<br/>New Angeles, NA 90212</p>
+</div>
+<!-- Location Item (Inactive) -->
+<div class="bg-surface-container-low p-6 mb-2 border-l-4 border-transparent hover:border-outline-variant cursor-pointer transition-all">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline font-bold text-lg uppercase tracking-tight text-on-surface">The Foundry</h3>
+<span class="bg-surface-container-highest text-on-surface-variant font-label text-xs px-2 py-1 uppercase tracking-widest border border-outline-variant/30">Open</span>
+</div>
+<p class="font-body text-sm text-outline-variant mb-0 uppercase">88 Smelter Road<br/>Outskirts, NA 90220</p>
+</div>
+<!-- End of List Indicator -->
+<div class="py-8 flex justify-center items-center gap-4 text-outline-variant">
+<div class="h-px bg-outline-variant/20 w-12"></div>
+<span class="font-label text-xs uppercase tracking-widest">End of Results</span>
+<div class="h-px bg-outline-variant/20 w-12"></div>
+</div>
+</div>
+</aside>
+</main>
+<!-- Footer -->
+<footer class="bg-[#131313] dark:bg-[#131313] docked full-width bottom-0 bg-[#0a0a0a] flat no shadows z-50">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center w-full px-6 py-12 gap-8">
+<div class="text-lg font-black text-[#FAFF00] font-['Space_Grotesk'] tracking-tighter uppercase">MADNESS_COFFEE_SYSTEMS</div>
+<nav class="flex flex-wrap gap-6">
+<a class="font-['Inter'] font-mono text-[10px] uppercase tracking-[0.2em] text-white/40 hover:text-[#FAFF00] hover:underline underline-offset-8 opacity-80 hover:opacity-100 transition-all" href="#">CATALOG</a>
+<a class="font-['Inter'] font-mono text-[10px] uppercase tracking-[0.2em] text-[#FAFF00] hover:text-[#FAFF00] hover:underline underline-offset-8 opacity-80 hover:opacity-100 transition-all" href="#">LOCATOR</a>
+<a class="font-['Inter'] font-mono text-[10px] uppercase tracking-[0.2em] text-white/40 hover:text-[#FAFF00] hover:underline underline-offset-8 opacity-80 hover:opacity-100 transition-all" href="#">ARCHIVE</a>
+<a class="font-['Inter'] font-mono text-[10px] uppercase tracking-[0.2em] text-white/40 hover:text-[#FAFF00] hover:underline underline-offset-8 opacity-80 hover:opacity-100 transition-all" href="#">LEGAL</a>
+</nav>
+<div class="font-['Inter'] font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">©2024 MADNESS_COFFEE_SYSTEMS [ALL_RIGHTS_RESERVED]</div>
+</div>
+</footer>
+</body></html>

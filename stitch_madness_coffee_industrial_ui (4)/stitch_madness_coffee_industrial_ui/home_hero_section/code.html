@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Madness Coffee</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed-variant": "#244d4e",
+                      "on-primary-fixed": "#1c1d00",
+                      "outline-variant": "#484831",
+                      "surface-variant": "#353535",
+                      "surface-tint": "#cace00",
+                      "surface-container-highest": "#353535",
+                      "surface-container": "#1f1f1f",
+                      "secondary-container": "#474746",
+                      "on-error": "#690005",
+                      "on-secondary-fixed": "#1b1c1c",
+                      "inverse-surface": "#e2e2e2",
+                      "secondary-fixed": "#e5e2e1",
+                      "on-primary": "#313300",
+                      "inverse-primary": "#606200",
+                      "error-container": "#93000a",
+                      "surface-container-high": "#2a2a2a",
+                      "on-surface-variant": "#c9c8aa",
+                      "surface-container-low": "#1b1b1b",
+                      "on-tertiary": "#083638",
+                      "secondary": "#c8c6c5",
+                      "surface": "#131313",
+                      "on-secondary-fixed-variant": "#474746",
+                      "primary-fixed": "#e6eb00",
+                      "on-surface": "#e2e2e2",
+                      "on-primary-container": "#666800",
+                      "on-background": "#e2e2e2",
+                      "on-tertiary-container": "#436b6c",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "primary-fixed-dim": "#cace00",
+                      "outline": "#939277",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#a4cecf",
+                      "on-secondary": "#303030",
+                      "background": "#131313",
+                      "on-primary-fixed-variant": "#484a00",
+                      "on-secondary-container": "#b7b5b4",
+                      "surface-bright": "#393939",
+                      "tertiary": "#ffffff",
+                      "on-tertiary-fixed": "#002021",
+                      "error": "#ffb4ab",
+                      "surface-dim": "#131313",
+                      "tertiary-container": "#c0eaeb",
+                      "primary-container": "#e6eb00",
+                      "tertiary-fixed": "#c0eaeb",
+                      "primary": "#ffffff",
+                      "surface-container-lowest": "#0e0e0e",
+                      "inverse-on-surface": "#303030"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0rem",
+                      "lg": "0rem",
+                      "xl": "0rem",
+                      "full": "0rem"
+              },
+              "spacing": {},
+              "fontFamily": {
+                      "headline": [
+                              "Space Grotesk"
+                      ],
+                      "body": [
+                              "Inter"
+                      ],
+                      "label": [
+                              "Inter"
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex flex-col antialiased">
+<!-- TopAppBar -->
+<header class="bg-[#131313] dark:bg-[#131313] docked full-width top-0 border-none shadow-[0_0_30px_rgba(250,255,0,0.1)] sticky z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-none bg-[#1c1c1c]">
+<!-- Leading Icon -->
+<button class="text-white/60 hover:text-[#FAFF00] hover:bg-transparent transition-colors duration-100 scale-95 active:scale-100 p-2 focus:outline-none">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<!-- Headline/Brand -->
+<h1 class="font-['Space_Grotesk'] font-black uppercase tracking-tighter text-3xl text-[#FAFF00] tracking-tighter flex-1 text-center truncate px-4">
+                MADNESS_COFFEE
+            </h1>
+<!-- Trailing Icon -->
+<button class="text-[#FAFF00] border-b-4 border-[#FAFF00] hover:bg-[#FAFF00] hover:text-[#131313] transition-colors duration-100 scale-95 active:scale-100 p-2 focus:outline-none">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full flex flex-col relative overflow-hidden">
+<!-- Hero Overlay Grid Pattern -->
+<div class="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(circle_at_center,var(--tw-colors-outline-variant)_1px,transparent_1px)] bg-[size:24px_24px] opacity-10"></div>
+<!-- Hero Section -->
+<section class="relative w-full min-h-[751px] flex flex-col justify-end lg:justify-center p-6 lg:p-16 z-10 bg-surface">
+<!-- Background Image Area (Architectural/Industrial) -->
+<div class="absolute inset-0 z-0 bg-surface">
+<img alt="Hero background" class="w-full h-full object-cover opacity-30 grayscale contrast-150 mix-blend-luminosity" data-alt="dramatic high contrast close up of freshly roasted dark coffee beans spilling from a heavy industrial metal hopper with harsh directional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxsZ4k-DpS7yMN3exNeiaV3rHeIYCiSAa65j9PgI2r3l1Ktgj1S5SpjstVHCG72h8dqDlG0dJqXMiGSruAVPFxO4n-Z5iZnWtwzXZvjgKd2u7bHbxqAxooU3V6JMoqCjCo_EwIknNSWhCxD-YGrDfz0TCjx7eg2kZYINzOMaA5JrqKxUx61AWm3qt9H5YHj4glZzkMyY7StpRL61bVp70e1oVQneUPNUVQCnMiva542JRORMDHoAaTw6pJ0uY3Cf2-klb6eKEhsg"/>
+<!-- Gradients for depth and legibility -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/40 to-transparent"></div>
+</div>
+<div class="relative z-10 flex flex-col gap-8 max-w-7xl w-full mx-auto">
+<!-- System Status / Meta Info -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 text-xs font-label uppercase tracking-[0.1em] text-primary">
+<div class="flex items-center gap-2 bg-surface-container-highest px-3 py-1">
+<span class="w-2 h-2 bg-primary"></span>
+<span>SYSTEM_ONLINE</span>
+</div>
+<span class="text-on-surface-variant font-mono">BATCH_004 // COLOMBIA_SUPREMO</span>
+</div>
+<!-- Massive Headline -->
+<div class="flex flex-col gap-2 relative">
+<!-- Technical accent block -->
+<div class="absolute -left-6 top-0 w-2 h-full bg-primary hidden lg:block"></div>
+<h2 class="font-headline font-black text-5xl sm:text-7xl lg:text-[8rem] leading-[0.85] text-primary uppercase tracking-tighter mix-blend-difference">
+                        CRITICAL <br/>
+<span class="text-surface-variant line-through decoration-primary decoration-8">FATIGUE</span><br/>
+                        OVERRIDE
+                    </h2>
+</div>
+<!-- Subheadline / Body -->
+<p class="font-body text-base lg:text-xl text-on-surface-variant max-w-2xl font-medium tracking-wide uppercase leading-relaxed bg-surface/50 backdrop-blur-md p-4 border-l-2 border-primary">
+                    HIGH-YIELD CAFFEINE PROTOCOL. INDUSTRIAL ROAST FOR MAXIMUM EFFICIENCY. NO SOFT EDGES. NO COMPROMISE.
+                </p>
+<!-- Action Area -->
+<div class="flex flex-col sm:flex-row gap-4 mt-8 w-full sm:w-auto">
+<button class="bg-primary text-on-primary font-headline font-bold uppercase text-lg px-8 py-5 hover:bg-surface hover:text-primary border-2 border-primary transition-colors flex justify-between items-center group w-full sm:w-[300px]">
+<span>INITIALIZE_ORDER</span>
+<span class="material-symbols-outlined text-2xl group-hover:translate-x-2 transition-transform" data-icon="arrow_forward_ios">arrow_forward_ios</span>
+</button>
+<button class="bg-transparent text-primary font-headline font-bold uppercase text-lg px-8 py-5 border-2 border-outline hover:border-primary hover:bg-surface-container transition-colors flex justify-between items-center w-full sm:w-auto">
+<span>VIEW_SPECS</span>
+</button>
+</div>
+</div>
+<!-- Floating Decorative Technical Data -->
+<div class="absolute bottom-6 right-6 font-mono text-[10px] text-outline-variant text-right hidden md:block leading-tight">
+                ROAST_TEMP: 205°C<br/>
+                EXTRACTION_PRESSURE: 9 BAR<br/>
+                CAFFEINE_INDEX: 1.4x
+            </div>
+</section>
+<!-- Bento Grid / Specs Section -->
+<section class="w-full bg-surface py-16 px-6 lg:px-16">
+<div class="max-w-7xl mx-auto flex flex-col gap-16">
+<!-- Section Header -->
+<div class="flex justify-between items-end border-b-2 border-surface-container-high pb-4">
+<h3 class="font-headline font-bold text-2xl lg:text-4xl text-on-surface uppercase tracking-tight">
+                        PROTOCOL_DETAILS
+                    </h3>
+<span class="font-mono text-xs text-primary hidden sm:block">DATA_STREAM_ACTIVE</span>
+</div>
+<!-- Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-4">
+<!-- Main Feature Block -->
+<div class="md:col-span-8 bg-surface-container-low border-l-4 border-primary p-8 flex flex-col justify-between min-h-[300px] relative overflow-hidden group">
+<div class="absolute right-0 top-0 w-32 h-32 bg-primary/5 blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+<div class="z-10 flex flex-col gap-4">
+<span class="font-mono text-xs text-on-surface-variant uppercase bg-surface px-2 py-1 self-start">ORIGIN // HUILA_COLOMBIA</span>
+<h4 class="font-headline font-extrabold text-3xl lg:text-5xl text-primary uppercase leading-none mt-4">
+                                DARK_MATTER<br/>ESPRESSO_BLEND
+                            </h4>
+<p class="font-body text-sm text-on-surface mt-4 max-w-md">
+                                Machined precision roasting. Notes of raw cacao, industrial molasses, and burnt toffee. Designed for high-pressure extraction environments.
+                            </p>
+</div>
+<div class="z-10 mt-8 flex justify-between items-center border-t border-surface-container-highest pt-4">
+<span class="font-mono text-xl font-bold text-on-surface">1KG // $45.00</span>
+<button class="text-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl" data-icon="add_circle">add_circle</span>
+</button>
+</div>
+</div>
+<!-- Secondary Metric Block 1 -->
+<div class="md:col-span-4 bg-surface-container flex flex-col p-6 gap-6 justify-between">
+<div class="flex justify-between items-start">
+<span class="font-mono text-xs text-primary uppercase">INTENSITY_RATING</span>
+<span class="material-symbols-outlined text-outline" data-icon="bolt">bolt</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="text-6xl font-headline font-black text-on-surface">09<span class="text-2xl text-outline-variant">/10</span></div>
+<div class="w-full bg-surface h-2 mt-2">
+<div class="h-full bg-primary w-[90%]"></div>
+</div>
+</div>
+</div>
+<!-- Secondary Metric Block 2 -->
+<div class="md:col-span-4 bg-surface-container flex flex-col p-6 gap-6 justify-between order-3 md:order-none">
+<div class="flex justify-between items-start">
+<span class="font-mono text-xs text-on-surface-variant uppercase">ROAST_PROFILE</span>
+<span class="material-symbols-outlined text-outline" data-icon="local_fire_department">local_fire_department</span>
+</div>
+<div class="flex flex-col">
+<span class="text-3xl font-headline font-bold text-primary uppercase tracking-tight">FULL_CITY+</span>
+<span class="font-body text-xs text-outline-variant mt-2">OPTIMIZED FOR MILK INTEGRATION</span>
+</div>
+</div>
+<!-- Image / Texture Block -->
+<div class="md:col-span-8 bg-surface-container-highest min-h-[250px] relative overflow-hidden group order-2 md:order-none">
+<img alt="Coffee extraction" class="w-full h-full object-cover grayscale contrast-125 opacity-60 group-hover:opacity-100 transition-opacity duration-500" data-alt="extreme close up of thick dark espresso dripping from a heavy chrome portafilter against a pitch black background harsh industrial lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAPogFuoxLn0RY3hhos8yiqrsN5ERRdp3ZYDzeUTBx1SoUUlSFqVhTR_03U3kbo1smuxWBgYiFqVe9SnfkZRNn7183jRzinsWUttlhhCZjKAhDiO1rZk1671WLYt4JQtLHG8D9l4jJHEFX44RQT0jiH71uvoIvszp1rSMYd_8eUACGZuzqlsr1He_A--rFfjL37R3qwcteZ-woRchV5akkefPXWkTPkmc7OMMmpXwII0sqXcVgPKBlXsWePdq1CaGp2ON-JYVsTQ"/>
+<div class="absolute bottom-4 left-4 bg-surface px-3 py-1 border border-outline/20 backdrop-blur-sm">
+<span class="font-mono text-xs text-on-surface uppercase">EXTRACTION_SIMULATION</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#131313] dark:bg-[#131313] docked full-width bottom-0 bg-[#0a0a0a]">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center w-full px-6 py-12 gap-8 flat no shadows border-t-4 border-[#1c1c1c]">
+<!-- Brand -->
+<div class="text-lg font-black text-[#FAFF00] font-['Space_Grotesk'] tracking-tighter">
+                MADNESS_COFFEE
+            </div>
+<!-- Links -->
+<nav class="flex flex-wrap gap-6 md:gap-8">
+<a class="font-['Inter'] font-mono text-[10px] uppercase tracking-[0.2em] text-white/40 hover:text-[#FAFF00] hover:underline underline-offset-8 opacity-80 hover:opacity-100 transition-all" href="#">
+                    CATALOG
+                </a>
+<a class="font-['Inter'] font-mono text-[10px] uppercase tracking-[0.2em] text-white/40 hover:text-[#FAFF00] hover:underline underline-offset-8 opacity-80 hover:opacity-100 transition-all" href="#">
+                    LOCATOR
+                </a>
+<a class="font-['Inter'] font-mono text-[10px] uppercase tracking-[0.2em] text-white/40 hover:text-[#FAFF00] hover:underline underline-offset-8 opacity-80 hover:opacity-100 transition-all" href="#">
+                    ARCHIVE
+                </a>
+<a class="font-['Inter'] font-mono text-[10px] uppercase tracking-[0.2em] text-white/40 hover:text-[#FAFF00] hover:underline underline-offset-8 opacity-80 hover:opacity-100 transition-all" href="#">
+                    LEGAL
+                </a>
+</nav>
+<!-- Copyright -->
+<div class="font-['Inter'] font-mono text-[10px] uppercase tracking-[0.2em] text-[#FAFF00] dark:text-[#FAFF00]">
+                ©2024 MADNESS_COFFEE_SYSTEMS [ALL_RIGHTS_RESERVED]
+            </div>
+</div>
+</footer>
+</body></html>
