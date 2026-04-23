@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta | MADNESS COFFEE</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Grotesk:wght@700;800;900&family=Playfair+Display:ital,wght@1,400;1,700&family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f3c41a', // Official Industrial Yellow
+                        background: '#070b13', // Official Deep Charcoal Navy
+                    },
+                    fontFamily: {
+                        headline: ['Space Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+        
+        * { border-radius: 0 !important; }
+        
+        body { 
+            background-color: #070b13; 
+            color: #FFFFFF; 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden;
+        }
+        
+        .industrial-grid {
+            background-image: radial-gradient(#f3c41a 1px, transparent 1px);
+            background-size: 32px 32px;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .scanline {
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to bottom, rgba(243, 196, 26, 0), rgba(243, 196, 26, 0.15), rgba(243, 196, 26, 0));
+            position: absolute;
+            animation: scan 8s linear infinite;
+            z-index: 50;
+            pointer-events: none;
+        }
+
+        @keyframes scan {
+            from { top: -10%; }
+            to { top: 110%; }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-black min-h-screen flex flex-col">
+    
+    <div class="scanline"></div>
+
+    <!-- Navbar -->
+    <nav class="w-full z-50 bg-[#070b13] border-b-2 border-primary/20 relative">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <!-- Left Links -->
+            <div class="hidden lg:flex gap-10 font-mono text-[10px] uppercase tracking-[0.4em] font-bold text-white/40">
+                <a href="/index.html" class="hover:text-primary transition-colors">TIENDA</a>
+                <a href="#" class="hover:text-primary transition-colors">CAFETERÍAS</a>
+                <a href="#" class="hover:text-primary transition-colors">ELABORACIÓN</a>
+            </div>
+
+            <!-- Center Logo -->
+            <div class="absolute left-1/2 -translate-x-1/2 flex flex-col items-center">
+                <a href="/index.html">
+                    <img src="https://madnesscoffee.com/cdn/shop/files/logo-madness-amarillo.png?v=1669625636" 
+                         alt="Madness Coffee Logo" 
+                         class="h-10 md:h-12 w-auto object-contain">
+                </a>
+            </div>
+
+            <!-- Right Icons -->
+            <div class="flex items-center gap-8 text-white/50">
+                <span class="material-symbols-outlined cursor-pointer hover:text-primary transition">search</span>
+                <a href="/login.html" class="material-symbols-outlined text-primary cursor-pointer transition">person</a>
+                <span class="material-symbols-outlined cursor-pointer hover:text-primary transition">shopping_bag</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Register Container -->
+    <main class="flex-grow flex items-center justify-center relative bg-[#070b13] py-20 px-4">
+        <div class="absolute inset-0 industrial-grid z-0"></div>
+        
+        <div class="relative z-10 w-full max-w-2xl bg-white border-4 border-black p-12 md:p-20 shadow-[24px_24px_0_0_#f3c41a]">
+            <!-- Decorative Tech Badge -->
+            <div class="absolute -top-4 -left-4 bg-black text-primary font-mono text-[10px] uppercase tracking-[0.3em] font-black px-4 py-2 border border-primary shadow-[4px_4px_0_0_#f3c41a]">
+                SYS_REGISTER_NODE
+            </div>
+
+            <div class="text-center mb-16">
+                <h1 class="font-headline font-black text-5xl md:text-6xl text-black uppercase tracking-tighter leading-none">
+                    CREAR<br><span class="text-primary italic transform -skew-x-6 inline-block">CUENTA</span>
+                </h1>
+            </div>
+
+            <form class="space-y-6 max-w-md mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="firstName" class="sr-only">Nombre</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="NOMBRE" required
+                               class="w-full bg-black/5 border-2 border-black/20 text-black px-6 py-5 font-mono text-sm uppercase tracking-widest placeholder:text-black/30 focus:border-black focus:ring-0 transition-colors">
+                    </div>
+
+                    <div>
+                        <label for="lastName" class="sr-only">Apellido</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="APELLIDO" required
+                               class="w-full bg-black/5 border-2 border-black/20 text-black px-6 py-5 font-mono text-sm uppercase tracking-widest placeholder:text-black/30 focus:border-black focus:ring-0 transition-colors">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="email" class="sr-only">Correo electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="CORREO ELECTRÓNICO" required
+                           class="w-full bg-black/5 border-2 border-black/20 text-black px-6 py-5 font-mono text-sm uppercase tracking-widest placeholder:text-black/30 focus:border-black focus:ring-0 transition-colors">
+                </div>
+
+                <div>
+                    <label for="password" class="sr-only">Contraseña</label>
+                    <input type="password" id="password" name="password" placeholder="CONTRASEÑA" required
+                           class="w-full bg-black/5 border-2 border-black/20 text-black px-6 py-5 font-mono text-sm uppercase tracking-widest placeholder:text-black/30 focus:border-black focus:ring-0 transition-colors">
+                </div>
+
+                <div class="pt-6">
+                    <button type="submit" 
+                            class="w-full bg-primary text-black font-headline font-black py-6 px-8 uppercase tracking-widest text-xl hover:bg-black hover:text-primary transition-all duration-300 shadow-[8px_8px_0_0_#000000] hover:shadow-none hover:translate-x-2 hover:translate-y-2 border-2 border-primary hover:border-black">
+                        CREAR
+                    </button>
+                </div>
+
+                <div class="text-center pt-8 border-t-2 border-black/5 mt-8">
+                    <a href="/login.html" class="font-mono text-sm text-black hover:text-primary font-bold underline underline-offset-4 tracking-widest uppercase transition-colors">
+                        INICIAR SESIÓN
+                    </a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Simplified Footer -->
+    <footer class="bg-[#070b13] border-t-2 border-primary/20 py-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 items-center gap-8 text-center md:text-left">
+            <div class="font-headline font-black text-white/50 hover:text-white uppercase tracking-widest text-lg transition-colors cursor-pointer">
+                CONTACTO
+            </div>
+            
+            <div class="flex justify-center opacity-50 hover:opacity-100 transition-opacity">
+                <img src="https://madnesscoffee.com/cdn/shop/files/logo-madness-amarillo.png?v=1669625636" alt="Madness Logo" class="h-8 grayscale hover:grayscale-0 transition-all">
+            </div>
+
+            <div class="font-headline font-black text-white/50 hover:text-white uppercase tracking-widest text-lg transition-colors cursor-pointer md:text-right">
+                AVISOS LEGALES
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
