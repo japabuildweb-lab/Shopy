@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda | MADNESS COFFEE</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Grotesk:wght@700;800;900&family=Playfair+Display:ital,wght@1,400;1,700&family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f3c41a', // Official Industrial Yellow
+                        background: '#070b13', // Official Deep Charcoal Navy
+                        surface: '#0f141e',
+                    },
+                    fontFamily: {
+                        headline: ['Space Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+        
+        * { border-radius: 0 !important; }
+        
+        body { 
+            background-color: #070b13; 
+            color: #FFFFFF; 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden;
+        }
+        
+        .industrial-grid {
+            background-image: radial-gradient(#f3c41a 1px, transparent 1px);
+            background-size: 32px 32px;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .scanline {
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to bottom, rgba(243, 196, 26, 0), rgba(243, 196, 26, 0.15), rgba(243, 196, 26, 0));
+            position: absolute;
+            animation: scan 8s linear infinite;
+            z-index: 50;
+            pointer-events: none;
+        }
+
+        @keyframes scan {
+            from { top: -10%; }
+            to { top: 110%; }
+        }
+
+        .glitch-hover:hover {
+            animation: glitch 0.3s cubic-bezier(.25,.46,.45,.94) both infinite;
+            color: #f3c41a;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0); text-shadow: -2px 2px #ff00c1, 2px -2px #00fff9; }
+            25% { transform: translate(-2px, 2px); }
+            50% { transform: translate(-2px, -2px); text-shadow: 2px -2px #ff00c1, -2px 2px #00fff9; }
+            75% { transform: translate(2px, 2px); }
+            100% { transform: translate(0); }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-black">
+    
+    <div class="scanline"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-[#070b13]/90 backdrop-blur-md border-b-2 border-primary/20">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <!-- Left Links -->
+            <div class="hidden lg:flex gap-10 font-mono text-[10px] uppercase tracking-[0.4em] font-bold text-white/40">
+                <a href="/shop.html" class="text-primary transition-colors">TIENDA</a>
+                <a href="/cafeterias.html" class="hover:text-primary transition-colors">CAFETERÍAS</a>
+                <a href="/elaboracion.html" class="hover:text-primary transition-colors">ELABORACIÓN</a>
+            </div>
+
+            <!-- Center Logo -->
+            <div class="absolute left-1/2 -translate-x-1/2 flex flex-col items-center">
+                <a href="/index.html">
+                    <img src="https://madnesscoffee.com/cdn/shop/files/logo-madness-amarillo.png?v=1669625636" 
+                         alt="Madness Coffee Logo" 
+                         class="h-10 md:h-12 w-auto object-contain">
+                </a>
+            </div>
+
+            <!-- Right Icons -->
+            <div class="flex items-center gap-8 text-white/50">
+                <span class="material-symbols-outlined cursor-pointer hover:text-primary transition">search</span>
+                <a href="/login.html" class="material-symbols-outlined cursor-pointer hover:text-primary transition">person</a>
+                <span class="material-symbols-outlined cursor-pointer hover:text-primary transition">shopping_bag</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Store Hero -->
+    <header class="pt-40 pb-20 relative bg-[#070b13] border-b-4 border-primary">
+        <div class="absolute inset-0 industrial-grid z-0"></div>
+        <div class="max-w-[1920px] mx-auto px-6 lg:px-12 relative z-10">
+            <h1 class="font-headline font-black text-6xl md:text-8xl uppercase tracking-tighter text-white drop-shadow-2xl">
+                CATÁLOGO DE <br> <span class="text-primary italic">CAFÉS</span>
+            </h1>
+            <p class="font-mono text-sm text-white/50 mt-8 tracking-widest uppercase border-l-4 border-primary pl-4">
+                11 PRODUCTOS ENCONTRADOS <br> SYS_INVENTORY_SYNC
+            </p>
+        </div>
+    </header>
+
+    <!-- Filter Bar -->
+    <div class="bg-[#0f141e] border-b border-white/5 sticky top-24 z-40">
+        <div class="max-w-[1920px] mx-auto px-6 lg:px-12 py-4 flex flex-wrap gap-4 items-center justify-between">
+            <div class="flex flex-wrap gap-4">
+                <button class="bg-primary text-black font-mono font-bold text-xs uppercase px-6 py-2 shadow-[4px_4px_0_0_#fff]">TODOS</button>
+                <button class="bg-black text-white border border-white/20 font-mono font-bold text-xs uppercase px-6 py-2 hover:border-primary hover:text-primary transition-colors">DESCAFEINADO</button>
+                <button class="bg-black text-white border border-white/20 font-mono font-bold text-xs uppercase px-6 py-2 hover:border-primary hover:text-primary transition-colors">+88 PUNTOS</button>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <span class="font-mono text-xs text-white/50 tracking-widest uppercase">ORDENAR POR</span>
+                <select class="bg-black border border-white/20 text-white font-mono text-xs uppercase px-4 py-2 focus:border-primary outline-none cursor-pointer">
+                    <option>RELEVANCIA</option>
+                    <option>PRECIO: MENOR A MAYOR</option>
+                    <option>PRECIO: MAYOR A MENOR</option>
+                    <option>PUNTUACIÓN</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Grid -->
+    <main class="max-w-[1920px] mx-auto px-6 lg:px-12 py-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            
+            <!-- 1. Colombia Descafeinado -->
+            <div class="group flex flex-col bg-[#0f141e] border-t-8 border-primary hover:bg-[#1a1f2b] transition-all duration-500 relative cursor-pointer shadow-[8px_8px_0_0_rgba(0,0,0,0.5)] hover:shadow-[12px_12px_0_0_#f3c41a] hover:-translate-y-2">
+                <div class="aspect-[3/4] overflow-hidden relative p-8">
+                    <img src="https://madnesscoffee.com/cdn/shop/files/BASIC_5.png?v=1771938628&width=800" 
+                         alt="Colombia Descafeinado" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 drop-shadow-2xl">
+                    <div class="absolute top-4 left-4 bg-primary text-black font-mono text-[10px] font-black px-3 py-1 shadow-[2px_2px_0_0_#fff]">85.5 PTS</div>
+                </div>
+                <div class="p-8 flex flex-col text-left bg-[#070b13] group-hover:bg-[#1a1f2b] transition-colors border-t border-white/5 flex-grow">
+                    <h4 class="font-headline font-black text-2xl mb-2 tracking-tighter uppercase leading-tight">Colombia<br><span class="text-primary italic text-xl">- Descafeinado -</span></h4>
+                    <p class="font-mono text-xs text-white/40 mb-6 uppercase tracking-widest">250GR</p>
+                    <div class="mt-auto flex justify-between items-end">
+                        <span class="font-mono text-3xl font-black text-primary">&euro;10,95</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Colombia Risaralda -->
+            <div class="group flex flex-col bg-[#0f141e] border-t-8 border-white hover:border-primary hover:bg-[#1a1f2b] transition-all duration-500 relative cursor-pointer shadow-[8px_8px_0_0_rgba(0,0,0,0.5)] hover:shadow-[12px_12px_0_0_#f3c41a] hover:-translate-y-2">
+                <div class="aspect-[3/4] overflow-hidden relative p-8">
+                    <img src="https://madnesscoffee.com/cdn/shop/files/BASIC.png?v=1771938501&width=800" 
+                         alt="Colombia Risaralda" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 drop-shadow-2xl">
+                    <div class="absolute top-4 left-4 bg-black border border-white/20 text-white font-mono text-[10px] font-black px-3 py-1">85 PTS</div>
+                    <div class="absolute top-4 right-4 bg-red-600 text-white font-mono text-[10px] font-black px-3 py-1 shadow-[2px_2px_0_0_#000]">OFERTA</div>
+                </div>
+                <div class="p-8 flex flex-col text-left bg-[#070b13] group-hover:bg-[#1a1f2b] transition-colors border-t border-white/5 flex-grow">
+                    <h4 class="font-headline font-black text-2xl mb-2 tracking-tighter uppercase leading-tight">Colombia<br><span class="text-primary italic text-xl">- Risaralda -</span></h4>
+                    <p class="font-mono text-xs text-white/40 mb-6 uppercase tracking-widest">250GR</p>
+                    <div class="mt-auto flex justify-between items-end">
+                        <div class="flex flex-col">
+                            <span class="font-mono text-sm text-white/40 line-through">&euro;9,95</span>
+                            <span class="font-mono text-3xl font-black text-primary">&euro;8,95</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Nicaragua -->
+            <div class="group flex flex-col bg-[#0f141e] border-t-8 border-white hover:border-primary hover:bg-[#1a1f2b] transition-all duration-500 relative cursor-pointer shadow-[8px_8px_0_0_rgba(0,0,0,0.5)] hover:shadow-[12px_12px_0_0_#f3c41a] hover:-translate-y-2">
+                <div class="aspect-[3/4] overflow-hidden relative p-8">
+                    <img src="https://madnesscoffee.com/cdn/shop/files/BASIC_4.png?v=1771938467&width=800" 
+                         alt="Nicaragua" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 drop-shadow-2xl">
+                    <div class="absolute top-4 left-4 bg-black border border-white/20 text-white font-mono text-[10px] font-black px-3 py-1">85.5 PTS</div>
+                    <div class="absolute top-4 right-4 bg-red-600 text-white font-mono text-[10px] font-black px-3 py-1 shadow-[2px_2px_0_0_#000]">OFERTA</div>
+                </div>
+                <div class="p-8 flex flex-col text-left bg-[#070b13] group-hover:bg-[#1a1f2b] transition-colors border-t border-white/5 flex-grow">
+                    <h4 class="font-headline font-black text-2xl mb-2 tracking-tighter uppercase leading-tight">Nicaragua<br><span class="text-primary italic text-xl">- Finca Los Pinos -</span></h4>
+                    <p class="font-mono text-xs text-white/40 mb-6 uppercase tracking-widest">250GR</p>
+                    <div class="mt-auto flex justify-between items-end">
+                        <div class="flex flex-col">
+                            <span class="font-mono text-sm text-white/40 line-through">&euro;9,95</span>
+                            <span class="font-mono text-3xl font-black text-primary">&euro;8,95</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Brasil -->
+            <div class="group flex flex-col bg-[#0f141e] border-t-8 border-white hover:border-primary hover:bg-[#1a1f2b] transition-all duration-500 relative cursor-pointer shadow-[8px_8px_0_0_rgba(0,0,0,0.5)] hover:shadow-[12px_12px_0_0_#f3c41a] hover:-translate-y-2">
+                <div class="aspect-[3/4] overflow-hidden relative p-8">
+                    <img src="https://madnesscoffee.com/cdn/shop/files/BASIC_3.png?v=1771938430&width=800" 
+                         alt="Brasil" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 drop-shadow-2xl">
+                    <div class="absolute top-4 left-4 bg-black border border-white/20 text-white font-mono text-[10px] font-black px-3 py-1">84.5 PTS</div>
+                    <div class="absolute top-4 right-4 bg-red-600 text-white font-mono text-[10px] font-black px-3 py-1 shadow-[2px_2px_0_0_#000]">OFERTA</div>
+                </div>
+                <div class="p-8 flex flex-col text-left bg-[#070b13] group-hover:bg-[#1a1f2b] transition-colors border-t border-white/5 flex-grow">
+                    <h4 class="font-headline font-black text-2xl mb-2 tracking-tighter uppercase leading-tight">Brasil<br><span class="text-primary italic text-xl">- Cerrado Mineiro -</span></h4>
+                    <p class="font-mono text-xs text-white/40 mb-6 uppercase tracking-widest">250GR</p>
+                    <div class="mt-auto flex justify-between items-end">
+                        <div class="flex flex-col">
+                            <span class="font-mono text-sm text-white/40 line-through">&euro;9,95</span>
+                            <span class="font-mono text-3xl font-black text-primary">&euro;8,95</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Pacamara Rojo -->
+            <div class="group flex flex-col bg-[#0f141e] border-t-8 border-[#ff0055] hover:bg-[#1a1f2b] transition-all duration-500 relative cursor-pointer shadow-[8px_8px_0_0_rgba(0,0,0,0.5)] hover:shadow-[12px_12px_0_0_#ff0055] hover:-translate-y-2">
+                <div class="aspect-[3/4] overflow-hidden relative p-8">
+                    <img src="https://madnesscoffee.com/cdn/shop/files/PREMIUM_3.png?v=1771939069&width=800" 
+                         alt="Pacamara Rojo" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 drop-shadow-2xl">
+                    <div class="absolute top-4 left-4 bg-[#ff0055] text-white font-mono text-[10px] font-black px-3 py-1 shadow-[2px_2px_0_0_#000]">88 PTS</div>
+                    <div class="absolute top-4 right-4 bg-red-600 text-white font-mono text-[10px] font-black px-3 py-1 shadow-[2px_2px_0_0_#000]">OFERTA</div>
+                </div>
+                <div class="p-8 flex flex-col text-left bg-[#070b13] group-hover:bg-[#1a1f2b] transition-colors border-t border-white/5 flex-grow">
+                    <h4 class="font-headline font-black text-2xl mb-2 tracking-tighter uppercase leading-tight">Pacamara<br><span class="text-[#ff0055] italic text-xl">- Rojo -</span></h4>
+                    <p class="font-mono text-xs text-white/40 mb-6 uppercase tracking-widest">250GR</p>
+                    <div class="mt-auto flex justify-between items-end">
+                        <div class="flex flex-col">
+                            <span class="font-mono text-sm text-white/40 line-through">&euro;14,95</span>
+                            <span class="font-mono text-3xl font-black text-[#ff0055]">&euro;8,95</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Wush Wush -->
+            <div class="group flex flex-col bg-[#0f141e] border-t-8 border-[#00fff9] hover:bg-[#1a1f2b] transition-all duration-500 relative cursor-pointer shadow-[8px_8px_0_0_rgba(0,0,0,0.5)] hover:shadow-[12px_12px_0_0_#00fff9] hover:-translate-y-2">
+                <div class="aspect-[3/4] overflow-hidden relative p-8">
+                    <img src="https://madnesscoffee.com/cdn/shop/files/PREMIUM_09be5979-8acb-4dc6-b948-d7acb519be1d.png?v=1771939227&width=800" 
+                         alt="Wush Wush" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 drop-shadow-2xl">
+                    <div class="absolute top-4 left-4 bg-[#00fff9] text-black font-mono text-[10px] font-black px-3 py-1 shadow-[2px_2px_0_0_#fff]">89 PTS</div>
+                </div>
+                <div class="p-8 flex flex-col text-left bg-[#070b13] group-hover:bg-[#1a1f2b] transition-colors border-t border-white/5 flex-grow">
+                    <h4 class="font-headline font-black text-2xl mb-2 tracking-tighter uppercase leading-tight">Wush Wush<br><span class="text-[#00fff9] italic text-xl">- Edición Especial -</span></h4>
+                    <p class="font-mono text-xs text-white/40 mb-6 uppercase tracking-widest">250GR</p>
+                    <div class="mt-auto flex justify-between items-end">
+                        <span class="font-mono text-3xl font-black text-[#00fff9]">&euro;19,00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Geisha Etiopia -->
+            <div class="group flex flex-col bg-[#0f141e] border-t-8 border-primary hover:bg-[#1a1f2b] transition-all duration-500 relative cursor-pointer shadow-[8px_8px_0_0_rgba(0,0,0,0.5)] hover:shadow-[12px_12px_0_0_#f3c41a] hover:-translate-y-2">
+                <div class="aspect-[3/4] overflow-hidden relative p-8">
+                    <img src="https://madnesscoffee.com/cdn/shop/files/BASIC_5.png?v=1771938628&width=800" 
+                         alt="Geisha Etiopia" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 drop-shadow-2xl">
+                    <div class="absolute top-4 left-4 bg-primary text-black font-mono text-[10px] font-black px-3 py-1 shadow-[2px_2px_0_0_#fff]">89 PTS</div>
+                    <div class="absolute top-4 right-4 bg-red-600 text-white font-mono text-[10px] font-black px-3 py-1 shadow-[2px_2px_0_0_#000]">OFERTA</div>
+                </div>
+                <div class="p-8 flex flex-col text-left bg-[#070b13] group-hover:bg-[#1a1f2b] transition-colors border-t border-white/5 flex-grow">
+                    <h4 class="font-headline font-black text-2xl mb-2 tracking-tighter uppercase leading-tight">Geisha<br><span class="text-primary italic text-xl">- Etiopía -</span></h4>
+                    <p class="font-mono text-xs text-white/40 mb-6 uppercase tracking-widest">250GR</p>
+                    <div class="mt-auto flex justify-between items-end">
+                        <div class="flex flex-col">
+                            <span class="font-mono text-sm text-white/40 line-through">&euro;18,00</span>
+                            <span class="font-mono text-3xl font-black text-primary">&euro;17,00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Bourbon Aji -->
+            <div class="group flex flex-col bg-[#0f141e] border-t-8 border-white hover:border-primary hover:bg-[#1a1f2b] transition-all duration-500 relative cursor-pointer shadow-[8px_8px_0_0_rgba(0,0,0,0.5)] hover:shadow-[12px_12px_0_0_#f3c41a] hover:-translate-y-2">
+                <div class="aspect-[3/4] overflow-hidden relative p-8">
+                    <img src="https://madnesscoffee.com/cdn/shop/files/BASIC.png?v=1771938501&width=800" 
+                         alt="Bourbon Aji" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 drop-shadow-2xl">
+                    <div class="absolute top-4 left-4 bg-black border border-white/20 text-white font-mono text-[10px] font-black px-3 py-1">87 PTS</div>
+                </div>
+                <div class="p-8 flex flex-col text-left bg-[#070b13] group-hover:bg-[#1a1f2b] transition-colors border-t border-white/5 flex-grow">
+                    <h4 class="font-headline font-black text-2xl mb-2 tracking-tighter uppercase leading-tight">Bourbon<br><span class="text-primary italic text-xl">- Ají -</span></h4>
+                    <p class="font-mono text-xs text-white/40 mb-6 uppercase tracking-widest">250GR</p>
+                    <div class="mt-auto flex justify-between items-end">
+                        <span class="font-mono text-3xl font-black text-primary">&euro;14,95</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. Etiopia -->
+            <div class="group flex flex-col bg-[#0f141e] border-t-8 border-white hover:border-primary hover:bg-[#1a1f2b] transition-all duration-500 relative cursor-pointer shadow-[8px_8px_0_0_rgba(0,0,0,0.5)] hover:shadow-[12px_12px_0_0_#f3c41a] hover:-translate-y-2">
+                <div class="aspect-[3/4] overflow-hidden relative p-8">
+                    <img src="https://madnesscoffee.com/cdn/shop/files/BASIC_4.png?v=1771938467&width=800" 
+                         alt="Etiopia" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 drop-shadow-2xl">
+                    <div class="absolute top-4 left-4 bg-black border border-white/20 text-white font-mono text-[10px] font-black px-3 py-1">87 PTS</div>
+                    <div class="absolute top-4 right-4 bg-red-600 text-white font-mono text-[10px] font-black px-3 py-1 shadow-[2px_2px_0_0_#000]">OFERTA</div>
+                </div>
+                <div class="p-8 flex flex-col text-left bg-[#070b13] group-hover:bg-[#1a1f2b] transition-colors border-t border-white/5 flex-grow">
+                    <h4 class="font-headline font-black text-2xl mb-2 tracking-tighter uppercase leading-tight">Etiopía<br><span class="text-primary italic text-xl">- Sidamo -</span></h4>
+                    <p class="font-mono text-xs text-white/40 mb-6 uppercase tracking-widest">250GR</p>
+                    <div class="mt-auto flex justify-between items-end">
+                        <div class="flex flex-col">
+                            <span class="font-mono text-sm text-white/40 line-through">&euro;14,95</span>
+                            <span class="font-mono text-3xl font-black text-primary">&euro;8,95</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10. Shantaweywny -->
+            <div class="group flex flex-col bg-[#0f141e] border-t-8 border-[#00fff9] hover:bg-[#1a1f2b] transition-all duration-500 relative cursor-pointer shadow-[8px_8px_0_0_rgba(0,0,0,0.5)] hover:shadow-[12px_12px_0_0_#00fff9] hover:-translate-y-2">
+                <div class="aspect-[3/4] overflow-hidden relative p-8">
+                    <img src="https://madnesscoffee.com/cdn/shop/files/PREMIUM_3.png?v=1771939069&width=800" 
+                         alt="Shantaweywny" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 drop-shadow-2xl">
+                    <div class="absolute top-4 left-4 bg-[#00fff9] text-black font-mono text-[10px] font-black px-3 py-1 shadow-[2px_2px_0_0_#fff]">89 PTS</div>
+                    <div class="absolute top-4 right-4 bg-red-600 text-white font-mono text-[10px] font-black px-3 py-1 shadow-[2px_2px_0_0_#000]">OFERTA</div>
+                </div>
+                <div class="p-8 flex flex-col text-left bg-[#070b13] group-hover:bg-[#1a1f2b] transition-colors border-t border-white/5 flex-grow">
+                    <h4 class="font-headline font-black text-2xl mb-2 tracking-tighter uppercase leading-tight">Shantaweywny<br><span class="text-[#00fff9] italic text-xl">- Etiopía -</span></h4>
+                    <p class="font-mono text-xs text-white/40 mb-6 uppercase tracking-widest">250GR</p>
+                    <div class="mt-auto flex justify-between items-end">
+                        <div class="flex flex-col">
+                            <span class="font-mono text-sm text-white/40 line-through">&euro;18,00</span>
+                            <span class="font-mono text-3xl font-black text-[#00fff9]">&euro;8,95</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11. Africamoon -->
+            <div class="group flex flex-col bg-[#0f141e] border-t-8 border-white hover:border-primary hover:bg-[#1a1f2b] transition-all duration-500 relative cursor-pointer shadow-[8px_8px_0_0_rgba(0,0,0,0.5)] hover:shadow-[12px_12px_0_0_#f3c41a] hover:-translate-y-2">
+                <div class="aspect-[3/4] overflow-hidden relative p-8">
+                    <img src="https://madnesscoffee.com/cdn/shop/files/BASIC_3.png?v=1771938430&width=800" 
+                         alt="Africamoon" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 drop-shadow-2xl">
+                    <div class="absolute top-4 left-4 bg-black border border-white/20 text-white font-mono text-[10px] font-black px-3 py-1">85 PTS</div>
+                    <div class="absolute top-4 right-4 bg-red-600 text-white font-mono text-[10px] font-black px-3 py-1 shadow-[2px_2px_0_0_#000]">OFERTA</div>
+                </div>
+                <div class="p-8 flex flex-col text-left bg-[#070b13] group-hover:bg-[#1a1f2b] transition-colors border-t border-white/5 flex-grow">
+                    <h4 class="font-headline font-black text-2xl mb-2 tracking-tighter uppercase leading-tight">Africamoon<br><span class="text-primary italic text-xl">- Uganda -</span></h4>
+                    <p class="font-mono text-xs text-white/40 mb-6 uppercase tracking-widest">250GR</p>
+                    <div class="mt-auto flex justify-between items-end">
+                        <div class="flex flex-col">
+                            <span class="font-mono text-sm text-white/40 line-through">&euro;14,95</span>
+                            <span class="font-mono text-3xl font-black text-primary">&euro;8,95</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Categories Navigation Block -->
+    <section class="bg-[#070b13] py-20 border-t-2 border-white/5">
+        <div class="max-w-[1920px] mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Camisetas -->
+            <a href="/camisetas.html" class="group block cursor-pointer">
+                <div class="aspect-square bg-[#0f141e] overflow-hidden flex items-center justify-center p-12 group-hover:bg-[#1a1f2b] transition-colors shadow-[8px_8px_0_0_rgba(0,0,0,0.5)] group-hover:shadow-[12px_12px_0_0_#f3c41a] group-hover:-translate-y-2 transition-all duration-500 border-2 border-transparent group-hover:border-primary relative">
+                    <img src="https://madnesscoffee.com/cdn/shop/files/CAMISETANEGRA3-BACK-ezgif.com-optijpeg.jpg?v=1763657371&width=1200" alt="Camisetas" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                </div>
+                <div class="bg-white py-6 text-center border-b-8 border-black group-hover:border-primary transition-colors">
+                    <h3 class="font-headline font-black text-black text-2xl uppercase tracking-tighter">CAMISETAS <span class="material-symbols-outlined align-middle transition-transform group-hover:translate-x-2">east</span></h3>
+                </div>
+            </a>
+            
+            <!-- Material -->
+            <a href="/material.html" class="group block cursor-pointer">
+                <div class="aspect-square bg-[#f3c41a] overflow-hidden flex items-center justify-center p-12 group-hover:bg-[#d6aa12] transition-colors shadow-[8px_8px_0_0_rgba(0,0,0,0.5)] group-hover:shadow-[12px_12px_0_0_#fff] group-hover:-translate-y-2 transition-all duration-500 border-2 border-transparent group-hover:border-white relative">
+                    <div class="absolute inset-0 bg-white m-8 rounded-full flex items-center justify-center shadow-inner border-[12px] border-black">
+                        <h4 class="font-headline font-black text-4xl text-black rotate-[-15deg] uppercase">MATERIAL</h4>
+                    </div>
+                </div>
+                <div class="bg-white py-6 text-center border-b-8 border-black group-hover:border-primary transition-colors">
+                    <h3 class="font-headline font-black text-black text-2xl uppercase tracking-tighter">MATERIAL <span class="material-symbols-outlined align-middle transition-transform group-hover:translate-x-2">east</span></h3>
+                </div>
+            </a>
+
+            <!-- Packs -->
+            <a href="/packs.html" class="group block cursor-pointer">
+                <div class="aspect-square bg-[#0f141e] overflow-hidden flex items-center justify-center p-12 group-hover:bg-[#1a1f2b] transition-colors shadow-[8px_8px_0_0_rgba(0,0,0,0.5)] group-hover:shadow-[12px_12px_0_0_#f3c41a] group-hover:-translate-y-2 transition-all duration-500 border-2 border-transparent group-hover:border-primary relative">
+                    <img src="https://madnesscoffee.com/cdn/shop/files/Diseno_sin_titulo_12.png" alt="Packs" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                </div>
+                <div class="bg-white py-6 text-center border-b-8 border-black group-hover:border-primary transition-colors">
+                    <h3 class="font-headline font-black text-black text-2xl uppercase tracking-tighter">PACKS <span class="material-symbols-outlined align-middle transition-transform group-hover:translate-x-2">east</span></h3>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0f141e] border-t border-white/5 py-12">
+        <div class="max-w-[1920px] mx-auto px-6 lg:px-12 text-center">
+            <img src="https://madnesscoffee.com/cdn/shop/files/logo-madness-amarillo.png?v=1669625636" alt="Madness Logo" class="h-8 mx-auto grayscale opacity-50">
+            <p class="font-mono text-[10px] text-white/20 mt-8 tracking-widest uppercase">
+                MADNESS COFFEE © 2026. SYS_END.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

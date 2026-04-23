@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafeterías | MADNESS COFFEE</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Grotesk:wght@700;800;900&family=Playfair+Display:ital,wght@1,400;1,700&family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f3c41a', // Official Industrial Yellow
+                        background: '#070b13', // Official Deep Charcoal Navy
+                        surface: '#0f141e',
+                    },
+                    fontFamily: {
+                        headline: ['Space Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+        
+        * { border-radius: 0 !important; scroll-behavior: smooth; }
+        
+        body { 
+            background-color: #070b13; 
+            color: #FFFFFF; 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden;
+        }
+        
+        .industrial-grid {
+            background-image: radial-gradient(#f3c41a 1px, transparent 1px);
+            background-size: 32px 32px;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .scanline {
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to bottom, rgba(243, 196, 26, 0), rgba(243, 196, 26, 0.15), rgba(243, 196, 26, 0));
+            position: fixed;
+            animation: scan 8s linear infinite;
+            z-index: 50;
+            pointer-events: none;
+        }
+
+        @keyframes scan {
+            from { top: -10%; }
+            to { top: 110%; }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-black">
+    
+    <div class="scanline"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-[#070b13]/90 backdrop-blur-md border-b-2 border-primary/20">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <div class="hidden lg:flex gap-10 font-mono text-[10px] uppercase tracking-[0.4em] font-bold text-white/40">
+                <a href="/shop.html" class="hover:text-primary transition-colors">TIENDA</a>
+                <a href="/cafeterias.html" class="text-primary transition-colors">CAFETERÍAS</a>
+                <a href="/elaboracion.html" class="hover:text-primary transition-colors">ELABORACIÓN</a>
+            </div>
+            <div class="absolute left-1/2 -translate-x-1/2 flex flex-col items-center">
+                <a href="/index.html">
+                    <img src="https://madnesscoffee.com/cdn/shop/files/logo-madness-amarillo.png?v=1669625636" alt="Madness Coffee Logo" class="h-10 md:h-12 w-auto object-contain">
+                </a>
+            </div>
+            <div class="flex items-center gap-8 text-white/50">
+                <span class="material-symbols-outlined cursor-pointer hover:text-primary transition">search</span>
+                <a href="/login.html" class="material-symbols-outlined cursor-pointer hover:text-primary transition">person</a>
+                <span class="material-symbols-outlined cursor-pointer hover:text-primary transition">shopping_bag</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Hero -->
+    <header class="pt-40 pb-20 relative bg-[#070b13] border-b-4 border-primary">
+        <div class="absolute inset-0 industrial-grid z-0"></div>
+        <div class="max-w-[1920px] mx-auto px-6 lg:px-12 relative z-10 flex flex-col items-center text-center">
+            <div class="inline-block bg-primary text-black font-mono text-xs font-black px-4 py-2 mb-6 uppercase tracking-widest shadow-[4px_4px_0_0_#fff] animate-pulse">
+                > 8 NODOS ACTIVOS _ ESCANEANDO UBICACIONES...
+            </div>
+            <h1 class="font-headline font-black text-5xl md:text-8xl uppercase tracking-tighter text-white drop-shadow-2xl leading-none">
+                RED DE <br> <span class="text-primary italic">CAFETERÍAS</span>
+            </h1>
+        </div>
+    </header>
+
+    <!-- Content Grid -->
+    <main class="max-w-[1920px] mx-auto px-6 lg:px-12 py-20 relative">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+            <!-- Nodo 1 -->
+            <div class="bg-[#0f141e] border-t-8 border-primary group hover:-translate-y-2 hover:shadow-[12px_12px_0_0_#f3c41a] transition-all duration-300 relative flex flex-col">
+                <div class="absolute top-4 right-4 text-white/10 font-mono text-6xl font-black">01</div>
+                <div class="p-8 flex-grow">
+                    <h3 class="font-headline font-black text-2xl uppercase tracking-tighter text-white mb-6 pr-12">MADNESS BUSINESS</h3>
+                    <div class="space-y-4 font-mono text-xs text-white/60">
+                        <div class="flex flex-col">
+                            <span class="text-primary font-bold uppercase">> TELÉFONO</span>
+                            <span class="text-white mt-1">868 66 70 96</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-primary font-bold uppercase">> UBICACIÓN</span>
+                            <span class="text-white mt-1">30205 Cartagena, Murcia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 mt-auto border-t border-white/10">
+                    <a href="https://maps.app.goo.gl/ndZeqHiTd7YfwmwR8" target="_blank" class="p-4 text-center font-mono text-xs font-bold uppercase text-white hover:bg-primary hover:text-black transition-colors border-r border-white/10 flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-[16px]">map</span> Mapa
+                    </a>
+                    <a href="#" class="p-4 text-center font-mono text-xs font-bold uppercase text-white/30 cursor-not-allowed flex items-center justify-center gap-2">
+                        Sin Carta
+                    </a>
+                </div>
+            </div>
+
+            <!-- Nodo 2 -->
+            <div class="bg-[#0f141e] border-t-8 border-primary group hover:-translate-y-2 hover:shadow-[12px_12px_0_0_#f3c41a] transition-all duration-300 relative flex flex-col">
+                <div class="absolute top-4 right-4 text-white/10 font-mono text-6xl font-black">02</div>
+                <div class="p-8 flex-grow">
+                    <h3 class="font-headline font-black text-2xl uppercase tracking-tighter text-white mb-6 pr-12">MADNESS ALICANTE</h3>
+                    <div class="space-y-4 font-mono text-xs text-white/60">
+                        <div class="flex flex-col">
+                            <span class="text-primary font-bold uppercase">> TELÉFONO</span>
+                            <span class="text-white mt-1">965 779 210</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-primary font-bold uppercase">> HORARIO</span>
+                            <span class="text-white mt-1">L-D // 8:30 a 21:00</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-primary font-bold uppercase">> UBICACIÓN</span>
+                            <span class="text-white mt-1">C. San Nicolás, nº4, Bajo<br>03002 Alicante</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 mt-auto border-t border-white/10">
+                    <a href="https://goo.gl/maps/kH48cgoaCBquGxmA8" target="_blank" class="p-4 text-center font-mono text-xs font-bold uppercase text-white hover:bg-primary hover:text-black transition-colors border-r border-white/10 flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-[16px]">map</span> Mapa
+                    </a>
+                    <a href="https://web.recafy.com/es/local/af856931-b0a0-46ff-9923-2a5a574920b9/" target="_blank" class="p-4 text-center font-mono text-xs font-bold uppercase text-white hover:bg-white hover:text-black transition-colors flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-[16px]">restaurant_menu</span> Carta
+                    </a>
+                </div>
+            </div>
+
+            <!-- Nodo 3 -->
+            <div class="bg-[#0f141e] border-t-8 border-primary group hover:-translate-y-2 hover:shadow-[12px_12px_0_0_#f3c41a] transition-all duration-300 relative flex flex-col">
+                <div class="absolute top-4 right-4 text-white/10 font-mono text-6xl font-black">03</div>
+                <div class="p-8 flex-grow">
+                    <h3 class="font-headline font-black text-2xl uppercase tracking-tighter text-white mb-6 pr-12">MADNESS BENIDORM</h3>
+                    <div class="space-y-4 font-mono text-xs text-white/60">
+                        <div class="flex flex-col">
+                            <span class="text-primary font-bold uppercase">> TELÉFONO</span>
+                            <span class="text-white mt-1">966 974 110</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-primary font-bold uppercase">> HORARIO</span>
+                            <span class="text-white mt-1">L-D // 9:00 a 21:00</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-primary font-bold uppercase">> UBICACIÓN</span>
+                            <span class="text-white mt-1">Av. Vicente Llorca Alós, 8<br>03502 Benidorm</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 mt-auto border-t border-white/10">
+                    <a href="https://goo.gl/maps/awjwgbn9LPMK8T8W6" target="_blank" class="p-4 text-center font-mono text-xs font-bold uppercase text-white hover:bg-primary hover:text-black transition-colors border-r border-white/10 flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-[16px]">map</span> Mapa
+                    </a>
+                    <a href="https://web.recafy.com/es/local/bbd59d14-200e-4d42-9f6a-7aba8fc338e0/" target="_blank" class="p-4 text-center font-mono text-xs font-bold uppercase text-white hover:bg-white hover:text-black transition-colors flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-[16px]">restaurant_menu</span> Carta
+                    </a>
+                </div>
+            </div>
+
+            <!-- Nodo 4 -->
+            <div class="bg-[#0f141e] border-t-8 border-primary group hover:-translate-y-2 hover:shadow-[12px_12px_0_0_#f3c41a] transition-all duration-300 relative flex flex-col">
+                <div class="absolute top-4 right-4 text-white/10 font-mono text-6xl font-black">04</div>
+                <div class="p-8 flex-grow">
+                    <h3 class="font-headline font-black text-2xl uppercase tracking-tighter text-white mb-6 pr-12">MADNESS LOS ALCÁZARES</h3>
+                    <div class="space-y-4 font-mono text-xs text-white/60">
+                        <div class="flex flex-col">
+                            <span class="text-primary font-bold uppercase">> TELÉFONO</span>
+                            <span class="text-white mt-1">868 05 16 56</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-primary font-bold uppercase">> HORARIO</span>
+                            <span class="text-white mt-1">L-D // 8:00 a 21:00</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-primary font-bold uppercase">> UBICACIÓN</span>
+                            <span class="text-white mt-1">C. Rio Borines, 62<br>30710 Los Alcázares</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 mt-auto border-t border-white/10">
+                    <a href="https://goo.gl/maps/ufYTSCyJMF51FcDf9" target="_blank" class="p-4 text-center font-mono text-xs font-bold uppercase text-white hover:bg-primary hover:text-black transition-colors border-r border-white/10 flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-[16px]">map</span> Mapa
+                    </a>
+                    <a href="https://web.recafy.com/es/local/dcbe0f31-3398-4881-a61f-868d0d057ebc/" target="_blank" class="p-4 text-center font-mono text-xs font-bold uppercase text-white hover:bg-white hover:text-black transition-colors flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-[16px]">restaurant_menu</span> Carta
+                    </a>
+                </div>
+            </div>
+
+            <!-- Nodo 5 -->
+            <div class="bg-[#0f141e] border-t-8 border-primary group hover:-translate-y-2 hover:shadow-[12px_12px_0_0_#f3c41a] transition-all duration-300 relative flex flex-col">
+                <div class="absolute top-4 right-4 text-white/10 font-mono text-6xl font-black">05</div>
+                <div class="p-8 flex-grow">
+                    <h3 class="font-headline font-black text-2xl uppercase tracking-tighter text-white mb-6 pr-12">MADNESS CARTAGENA</h3>
+                    <div class="space-y-4 font-mono text-xs text-white/60">
+                        <div class="flex flex-col">
+                            <span class="text-primary font-bold uppercase">> TELÉFONO</span>
+                            <span class="text-white mt-1">623 43 29 99</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-primary font-bold uppercase">> HORARIO</span>
+                            <span class="text-white mt-1">L-S // 8.30-13.00, 16.30-20.00</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-primary font-bold uppercase">> UBICACIÓN</span>
+                            <span class="text-white mt-1">C. Floridablanca, 57</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 mt-auto border-t border-white/10">
+                    <a href="#" class="p-4 text-center font-mono text-xs font-bold uppercase text-white/30 cursor-not-allowed border-r border-white/10 flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-[16px]">map</span> Mapa
+                    </a>
+                    <a href="#" class="p-4 text-center font-mono text-xs font-bold uppercase text-white/30 cursor-not-allowed flex items-center justify-center gap-2">
+                        Pendiente
+                    </a>
+                </div>
+            </div>
+
+            <!-- Nodo 6 -->
+            <div class="bg-[#0f141e] border-t-8 border-primary group hover:-translate-y-2 hover:shadow-[12px_12px_0_0_#f3c41a] transition-all duration-300 relative flex flex-col">
+                <div class="absolute top-4 right-4 text-white/10 font-mono text-6xl font-black">06</div>
+                <div class="p-8 flex-grow">
+                    <h3 class="font-headline font-black text-2xl uppercase tracking-tighter text-white mb-6 pr-12">MADNESS TORRE PACHECO</h3>
+                    <div class="space-y-4 font-mono text-xs text-white/60">
+                        <div class="flex flex-col">
+                            <span class="text-primary font-bold uppercase">> TELÉFONO</span>
+                            <span class="text-white mt-1">968 07 31 03</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-primary font-bold uppercase">> HORARIO</span>
+                            <span class="text-white mt-1">L-D // 8:30 a 16:30</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-primary font-bold uppercase">> UBICACIÓN</span>
+                            <span class="text-white mt-1">Calle Pino Carrasco</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 mt-auto border-t border-white/10">
+                    <a href="#" class="p-4 text-center font-mono text-xs font-bold uppercase text-white/30 cursor-not-allowed border-r border-white/10 flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-[16px]">map</span> Mapa
+                    </a>
+                    <a href="#" class="p-4 text-center font-mono text-xs font-bold uppercase text-white/30 cursor-not-allowed flex items-center justify-center gap-2">
+                        Pendiente
+                    </a>
+                </div>
+            </div>
+
+            <!-- Nodo 7 -->
+            <div class="bg-[#0f141e] border-t-8 border-primary group hover:-translate-y-2 hover:shadow-[12px_12px_0_0_#f3c41a] transition-all duration-300 relative flex flex-col">
+                <div class="absolute top-4 right-4 text-white/10 font-mono text-6xl font-black">07</div>
+                <div class="p-8 flex-grow">
+                    <h3 class="font-headline font-black text-2xl uppercase tracking-tighter text-white mb-6 pr-12">MADNESS CARTAGONOVA</h3>
+                    <div class="space-y-4 font-mono text-xs text-white/60">
+                        <div class="flex flex-col">
+                            <span class="text-primary font-bold uppercase">> TELÉFONO</span>
+                            <span class="text-white mt-1">868 66 70 96</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-primary font-bold uppercase">> HORARIO</span>
+                            <span class="text-white mt-1">L-D // 8:30 a 21:00</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-primary font-bold uppercase">> UBICACIÓN</span>
+                            <span class="text-white mt-1">Doctor Luis Calandre<br>(Estadio Cartagonova)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-primary text-black font-mono text-[10px] font-black p-2 text-center uppercase tracking-widest border-t-4 border-black">
+                    ZONA BUSINESS DISPONIBLE
+                </div>
+            </div>
+
+            <!-- Nodo 8 -->
+            <div class="bg-[#0f141e] border-t-8 border-primary group hover:-translate-y-2 hover:shadow-[12px_12px_0_0_#f3c41a] transition-all duration-300 relative flex flex-col">
+                <div class="absolute top-4 right-4 text-white/10 font-mono text-6xl font-black">08</div>
+                <div class="p-8 flex-grow">
+                    <h3 class="font-headline font-black text-2xl uppercase tracking-tighter text-white mb-6 pr-12">MADNESS TAKE AWAY</h3>
+                    <div class="space-y-4 font-mono text-xs text-white/60">
+                        <div class="flex flex-col">
+                            <span class="text-primary font-bold uppercase">> TELÉFONO</span>
+                            <span class="text-white mt-1">965 779 210</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-primary font-bold uppercase">> HORARIO</span>
+                            <span class="text-white mt-1">L-S // 8:30 a 20:30</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-primary font-bold uppercase">> UBICACIÓN</span>
+                            <span class="text-white mt-1">C. Serrano, 6<br>03003 Alicante</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 mt-auto border-t border-white/10">
+                    <a href="https://www.google.com/maps/place/Madness+specialty+coffee/@38.3441189,-0.4933398,56m" target="_blank" class="p-4 text-center font-mono text-xs font-bold uppercase text-white hover:bg-primary hover:text-black transition-colors border-r border-white/10 flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-[16px]">map</span> Mapa
+                    </a>
+                    <a href="https://web.recafy.com/es/local/dcbe0f31-3398-4881-a61f-868d0d057ebc/" target="_blank" class="p-4 text-center font-mono text-xs font-bold uppercase text-white hover:bg-white hover:text-black transition-colors flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-[16px]">restaurant_menu</span> Carta
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0f141e] border-t border-white/5 py-12 mt-20">
+        <div class="max-w-[1920px] mx-auto px-6 lg:px-12 text-center">
+            <img src="https://madnesscoffee.com/cdn/shop/files/logo-madness-amarillo.png?v=1669625636" alt="Madness Logo" class="h-8 mx-auto grayscale opacity-50">
+            <p class="font-mono text-[10px] text-white/20 mt-8 tracking-widest uppercase">
+                MADNESS COFFEE © 2026. SYS_END.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guías de Elaboración | MADNESS COFFEE</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Grotesk:wght@700;800;900&family=Playfair+Display:ital,wght@1,400;1,700&family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f3c41a', // Official Industrial Yellow
+                        background: '#070b13', // Official Deep Charcoal Navy
+                        surface: '#0f141e',
+                    },
+                    fontFamily: {
+                        headline: ['Space Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+        
+        * { border-radius: 0 !important; scroll-behavior: smooth; }
+        
+        body { 
+            background-color: #070b13; 
+            color: #FFFFFF; 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden;
+        }
+        
+        .industrial-grid {
+            background-image: radial-gradient(#f3c41a 1px, transparent 1px);
+            background-size: 32px 32px;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .scanline {
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to bottom, rgba(243, 196, 26, 0), rgba(243, 196, 26, 0.15), rgba(243, 196, 26, 0));
+            position: fixed;
+            animation: scan 8s linear infinite;
+            z-index: 50;
+            pointer-events: none;
+        }
+
+        @keyframes scan {
+            from { top: -10%; }
+            to { top: 110%; }
+        }
+
+        /* Numbered list styling for steps */
+        ol.technical-steps {
+            list-style-type: none;
+            counter-reset: tech-counter;
+        }
+        ol.technical-steps li {
+            counter-increment: tech-counter;
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        ol.technical-steps li::before {
+            content: "0" counter(tech-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #f3c41a;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 900;
+            font-size: 1.25rem;
+            line-height: 1.5;
+        }
+        ol.technical-steps li:nth-child(n+10)::before {
+            content: counter(tech-counter);
+        }
+        ol.technical-steps li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-black">
+    
+    <div class="scanline"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-[#070b13]/90 backdrop-blur-md border-b-2 border-primary/20">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <div class="hidden lg:flex gap-10 font-mono text-[10px] uppercase tracking-[0.4em] font-bold text-white/40">
+                <a href="/shop.html" class="hover:text-primary transition-colors">TIENDA</a>
+                <a href="/cafeterias.html" class="hover:text-primary transition-colors">CAFETERÍAS</a>
+                <a href="/elaboracion.html" class="text-primary transition-colors">ELABORACIÓN</a>
+            </div>
+            <div class="absolute left-1/2 -translate-x-1/2 flex flex-col items-center">
+                <a href="/index.html">
+                    <img src="https://madnesscoffee.com/cdn/shop/files/logo-madness-amarillo.png?v=1669625636" alt="Madness Coffee Logo" class="h-10 md:h-12 w-auto object-contain">
+                </a>
+            </div>
+            <div class="flex items-center gap-8 text-white/50">
+                <span class="material-symbols-outlined cursor-pointer hover:text-primary transition">search</span>
+                <a href="/login.html" class="material-symbols-outlined cursor-pointer hover:text-primary transition">person</a>
+                <span class="material-symbols-outlined cursor-pointer hover:text-primary transition">shopping_bag</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Hero -->
+    <header class="pt-40 pb-20 relative bg-[#070b13] border-b-4 border-primary">
+        <div class="absolute inset-0 industrial-grid z-0"></div>
+        <div class="max-w-[1920px] mx-auto px-6 lg:px-12 relative z-10 flex flex-col md:flex-row gap-12 items-end">
+            <div class="flex-1">
+                <div class="inline-block bg-primary text-black font-mono text-xs font-black px-4 py-2 mb-6 uppercase tracking-widest shadow-[4px_4px_0_0_#fff]">MANUAL_TÉCNICO_V1.0</div>
+                <h1 class="font-headline font-black text-5xl md:text-7xl uppercase tracking-tighter text-white drop-shadow-2xl leading-none">
+                    GUÍAS DE <br> <span class="text-primary italic">ELABORACIÓN</span>
+                </h1>
+            </div>
+            <div class="flex-1 max-w-xl">
+                <p class="font-mono text-sm text-white/70 leading-relaxed border-l-2 border-primary pl-6">
+                    Si tienes el café más fresco del planeta a tu disposición, tiene sentido tratarlo adecuadamente para obtener lo mejor de la semilla. En Madness Coffee creemos que el viaje enseña al viajero tanto como el destino.
+                </p>
+                <p class="font-mono text-primary/80 mt-4 text-xs font-bold tracking-widest uppercase">
+                    > CADA PASO ES TAN IMPORTANTE COMO LA TAZA.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="max-w-[1920px] mx-auto px-6 lg:px-12 py-20 flex flex-col lg:flex-row gap-12 items-start relative">
+        
+        <!-- Sidebar Navigation (Index) -->
+        <aside class="w-full lg:w-1/4 sticky top-32 z-40">
+            <div class="bg-[#0f141e] border-2 border-white/10 p-8 shadow-[12px_12px_0_0_rgba(0,0,0,0.5)] relative">
+                <div class="absolute -top-3 -left-3 bg-black text-primary font-mono text-[10px] uppercase font-black px-3 py-1 border border-primary">INDEX_MENU</div>
+                
+                <h3 class="font-headline font-black text-2xl uppercase tracking-widest mb-8 text-white/30 border-b border-white/5 pb-4">MÉTODOS</h3>
+                
+                <ul class="flex flex-col gap-2 font-mono text-sm tracking-widest uppercase font-bold">
+                    <li><a href="#m-espresso" class="block py-3 px-4 hover:bg-primary hover:text-black transition-colors border border-transparent hover:border-black text-white/60">01. ESPRESSO</a></li>
+                    <li><a href="#m-aeropress" class="block py-3 px-4 hover:bg-primary hover:text-black transition-colors border border-transparent hover:border-black text-white/60">02. AEROPRESS</a></li>
+                    <li><a href="#m-chemex" class="block py-3 px-4 hover:bg-primary hover:text-black transition-colors border border-transparent hover:border-black text-white/60">03. CHEMEX</a></li>
+                    <li><a href="#m-colddrip" class="block py-3 px-4 hover:bg-primary hover:text-black transition-colors border border-transparent hover:border-black text-white/60">04. COLD DRIP</a></li>
+                    <li><a href="#m-prensa" class="block py-3 px-4 hover:bg-primary hover:text-black transition-colors border border-transparent hover:border-black text-white/60">05. PRENSA FRANCESA</a></li>
+                    <li><a href="#m-moka" class="block py-3 px-4 hover:bg-primary hover:text-black transition-colors border border-transparent hover:border-black text-white/60">06. MOKA</a></li>
+                    <li><a href="#m-v60" class="block py-3 px-4 hover:bg-primary hover:text-black transition-colors border border-transparent hover:border-black text-white/60">07. V-60</a></li>
+                    <li><a href="#m-goteo" class="block py-3 px-4 hover:bg-primary hover:text-black transition-colors border border-transparent hover:border-black text-white/60">08. CAFETERA GOTEO</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Content Area -->
+        <div class="w-full lg:w-3/4 flex flex-col gap-20">
+
+            <!-- 01. ESPRESSO -->
+            <section id="m-espresso" class="scroll-mt-32">
+                <div class="flex items-end gap-6 border-b-4 border-primary pb-6 mb-8">
+                    <span class="font-headline font-black text-6xl text-transparent stroke-text" style="-webkit-text-stroke: 1px #f3c41a;">01</span>
+                    <h2 class="font-headline font-black text-4xl uppercase tracking-tighter">ESPRESSO</h2>
+                </div>
+                <div class="bg-[#0f141e] p-8 md:p-12 border border-white/5 relative group">
+                    <p class="font-sans text-lg text-white/80 leading-relaxed mb-10 pl-6 border-l-4 border-white/20">
+                        El santo grial, el Monte Everest, el nirvana del café: lograr la perfección del espresso es el objetivo de todo verdadero devoto del café. En verdad, es probable que sea inalcanzable, y ahí radica la diversión; El siguiente espresso que hagas siempre será mejor.
+                    </p>
+                    <div class="bg-black/50 p-8 border border-white/5">
+                        <h4 class="font-mono text-primary text-xs uppercase tracking-[0.3em] font-bold mb-6">> SECUENCIA DE PREPARACIÓN</h4>
+                        <ol class="technical-steps font-mono text-sm text-white/70 leading-loose">
+                            <li>Retira el portafiltro de la cabeza de grupo de la máquina de café exprés y colócalo en una escala tarada.</li>
+                            <li>Purga la cabeza del grupo con agua para asegurarte de que esté completamente limpia y clara.</li>
+                            <li>Moler 18-22 gr de café en la cesta.</li>
+                            <li>Ajusta su molienda a polvo fino.</li>
+                            <li>Pasa el dedo por el café para distribuirlo uniformemente, de izquierda a derecha y luego de adelante hacia atrás.</li>
+                            <li>Manipula el café con la manipulación del portafiltro sobre una superficie limpia y plana. No demasiado duro, solo lo suficiente para sellar el café uniformemente. Luego gira el tamper para alisar los suelos. Esto ayuda a la extracción.</li>
+                            <li>Coloca el portafiltro en el encabezado del grupo y comienza a tirar el disparo. Comenzará con un goteo lento que se convertirá en una corriente uniforme. Aproximadamente a los 30 segundos, la extracción comenzará a llegar a su fin y la transmisión se volverá «rubia» o se volverá amarilla. Detén el disparo en este punto.</li>
+                        </ol>
+                        <p class="mt-8 font-headline font-black text-xl text-primary uppercase italic text-center">¡Contempla la belleza de lo que acabas de crear y disfruta de tu café!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 02. AEROPRESS -->
+            <section id="m-aeropress" class="scroll-mt-32">
+                <div class="flex items-end gap-6 border-b-4 border-primary pb-6 mb-8">
+                    <span class="font-headline font-black text-6xl text-transparent stroke-text" style="-webkit-text-stroke: 1px #f3c41a;">02</span>
+                    <h2 class="font-headline font-black text-4xl uppercase tracking-tighter">AEROPRESS</h2>
+                </div>
+                <div class="bg-[#0f141e] p-8 md:p-12 border border-white/5 relative group">
+                    <p class="font-sans text-lg text-white/80 leading-relaxed mb-10 pl-6 border-l-4 border-white/20">
+                        Un dispositivo innovador inventado en 2005, el Aeropress combina la impregnación con el hundimiento forzado utilizando presión de aire. Madness recomienda usar el método “invertido”, que se describe aquí.
+                    </p>
+                    <div class="bg-black/50 p-8 border border-white/5">
+                        <h4 class="font-mono text-primary text-xs uppercase tracking-[0.3em] font-bold mb-6">> SECUENCIA DE PREPARACIÓN</h4>
+                        <ol class="technical-steps font-mono text-sm text-white/70 leading-loose">
+                            <li>Llevar aproximadamente 160 gr de agua a ebullición. Carga un filtro en la tapa del Aeropress.</li>
+                            <li>Pesa 18 gr de café y muélelo hasta obtener una molienda fina, en algún lugar entre el goteo y el café expreso.</li>
+                            <li>Ensambla tu Aeropress boca abajo (acabado abocardado, números invertidos) y colócalo en una escala tarada. Asegúrate de que el émbolo esté marcado en 3.</li>
+                            <li>Pon un poco de agua caliente sobre el filtro para ayudar a que se adhiera a la tapa, ya que lo invertirá para unirlo.</li>
+                            <li>Añadir el café a la Aeropress.</li>
+                            <li>Agrega 160 gr de agua asegurándote de que todo el café esté saturado uniformemente.</li>
+                            <li>Revuelve suavemente 6 veces y luego coloca la tapa en la parte superior.</li>
+                            <li>Deja reposar durante dos minutos.</li>
+                            <li>Dale la vuelta a todo el conjunto con un movimiento suave y controlado para sentarte en la parte superior de una taza u otro recipiente con un diámetro de borde más pequeño que la sección acampanada de Aeropress. El Aeropress ahora está en el camino correcto.</li>
+                            <li>Comienza a aplicar presión hacia abajo a la sección superior del Aeropress. Ten cuidado al llegar al fondo, ya que el último líquido que sale de la cámara es seguido por un silbido de vapor.</li>
+                            <li>Tu café ya está preparado y ahora puede quitar el Aeropress.</li>
+                        </ol>
+                        <p class="mt-8 font-headline font-black text-xl text-primary uppercase italic text-center">¡Ahora disfruta de tu café!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 03. CHEMEX -->
+            <section id="m-chemex" class="scroll-mt-32">
+                <div class="flex items-end gap-6 border-b-4 border-primary pb-6 mb-8">
+                    <span class="font-headline font-black text-6xl text-transparent stroke-text" style="-webkit-text-stroke: 1px #f3c41a;">03</span>
+                    <h2 class="font-headline font-black text-4xl uppercase tracking-tighter">CHEMEX</h2>
+                </div>
+                <div class="bg-[#0f141e] p-8 md:p-12 border border-white/5 relative group">
+                    <p class="font-sans text-lg text-white/80 leading-relaxed mb-10 pl-6 border-l-4 border-white/20">
+                        Inventado en 1941 y aún fabricado con el mismo diseño de madera, vidrio y cuero, esta es la única cafetera incluida en la colección MOMA.
+                    </p>
+                    <div class="bg-black/50 p-8 border border-white/5">
+                        <h4 class="font-mono text-primary text-xs uppercase tracking-[0.3em] font-bold mb-6">> SECUENCIA DE PREPARACIÓN</h4>
+                        <ol class="technical-steps font-mono text-sm text-white/70 leading-loose">
+                            <li>Llevar a hervir 520 gr de agua. (Bueno para 2 tazas de café)</li>
+                            <li>Pesa 64 gr de café y moler grueso.</li>
+                            <li>Despliega el filtro y cárgalo en el Chemex. Nos gusta alinear los pliegues con el pico.</li>
+                            <li>Usa un poco del exceso de agua para remojar previamente el filtro y calentar el vaso del Chemex. Asegúrate de descargar el agua antes de verter el café en el filtro.</li>
+                            <li>Vierte el café molido en el Chemex, tratando de obtener la “cama” del café lo más pareja posible (golpea y agite si es necesario).</li>
+                            <li>Comenzando en el centro de la cama, comienza a verter aproximadamente 100 gr de agua por minuto en la cama de café, trabajando hacia afuera. Trata de evitar verter directamente a los lados.</li>
+                            <li>Espera 30 segundos para que el café florezca o se expanda. Esto maximiza el área de superficie y asegura una distribución uniforme del agua.</li>
+                            <li>Ahora vierte agua directamente en el centro de los terrenos, vertiendo lenta y cuidadosamente. Nuestro objetivo es tomar cuatro minutos para el vertido completo.</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 04. COLD DRIP -->
+            <section id="m-colddrip" class="scroll-mt-32">
+                <div class="flex items-end gap-6 border-b-4 border-primary pb-6 mb-8">
+                    <span class="font-headline font-black text-6xl text-transparent stroke-text" style="-webkit-text-stroke: 1px #f3c41a;">04</span>
+                    <h2 class="font-headline font-black text-4xl uppercase tracking-tighter">COLD DRIP</h2>
+                </div>
+                <div class="bg-[#0f141e] p-8 md:p-12 border border-white/5 relative group">
+                    <p class="font-sans text-lg text-white/80 leading-relaxed mb-10 pl-6 border-l-4 border-white/20">
+                        Lo mejor para un día caluroso. Recuerda que deberás comenzar un día antes, así que verifica el pronóstico del tiempo.
+                    </p>
+                    <div class="bg-black/50 p-8 border border-white/5">
+                        <h4 class="font-mono text-primary text-xs uppercase tracking-[0.3em] font-bold mb-6">> SECUENCIA DE PREPARACIÓN</h4>
+                        <ol class="technical-steps font-mono text-sm text-white/70 leading-loose">
+                            <li>Medir 910 gr de agua.</li>
+                            <li>Coloca el tapón de goma en el agujero de Filtron.</li>
+                            <li>Moja el filtro de lana y colóquelo con cuidado en el receptáculo en la parte inferior del Filtrón.</li>
+                            <li>Despliega el filtro y colóquelo dentro del Filtrón. Tuck para encajar.</li>
+                            <li>Pesa 99 gr de café y muélelo grueso.</li>
+                            <li>Agrega el café al Filtrón y tócalo para nivelarlo.</li>
+                            <li>Vierte el agua sobre el café con el objetivo de asegurarte de que todo el café vea la corriente y agítalo suavemente.</li>
+                            <li>Coloca el filtro de disco de plástico en su lugar, luego pon la parte superior del Filtron en su lugar.</li>
+                            <li>Deja reposar por 12 horas y luego pídele a un amigo que sostenga todo el Filtron sobre el recipiente elegido y retira el tapón. El café puede tardar uno o dos segundos en emerger, no temer.</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 05. PRENSA FRANCESA -->
+            <section id="m-prensa" class="scroll-mt-32">
+                <div class="flex items-end gap-6 border-b-4 border-primary pb-6 mb-8">
+                    <span class="font-headline font-black text-6xl text-transparent stroke-text" style="-webkit-text-stroke: 1px #f3c41a;">05</span>
+                    <h2 class="font-headline font-black text-4xl uppercase tracking-tighter">PRENSA FRANCESA</h2>
+                </div>
+                <div class="bg-[#0f141e] p-8 md:p-12 border border-white/5 relative group">
+                    <p class="font-sans text-lg text-white/80 leading-relaxed mb-10 pl-6 border-l-4 border-white/20">
+                        A veces criticada por los puristas, la prensa francesa puede proporcionar una gran taza de café. Su talón de Aquiles es propenso a la extracción excesiva, por lo que se recomienda transferir la olla completa a una jarra una vez que se presiona, o asegurarse de usar solo una prensa de tamaño único.
+                    </p>
+                    <div class="bg-black/50 p-8 border border-white/5">
+                        <h4 class="font-mono text-primary text-xs uppercase tracking-[0.3em] font-bold mb-6">> SECUENCIA DE PREPARACIÓN</h4>
+                        <ol class="technical-steps font-mono text-sm text-white/70 leading-loose">
+                            <li>Hervir aproximadamente 600 gr de agua para una prensa de 2 tazas.</li>
+                            <li>Muele 64 gr de café en trozos grandes y luego vierta aproximadamente 250 gr de agua para que florezca. Dale un suave revuelo y espera 30 segundos.</li>
+                            <li>Vierte el resto del agua y deje reposar el café durante exactamente cuatro minutos.</li>
+                            <li>Presiona el café con firmeza (debería dar una resistencia de aproximadamente 15 a 20 libras; demasiado y su molienda fue demasiado fina; muy poco y fue demasiado áspera).</li>
+                        </ol>
+                        <p class="mt-8 font-headline font-black text-xl text-primary uppercase italic text-center">¡Vierte inmediatamente, y disfruta de tu café!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 06. MOKA -->
+            <section id="m-moka" class="scroll-mt-32">
+                <div class="flex items-end gap-6 border-b-4 border-primary pb-6 mb-8">
+                    <span class="font-headline font-black text-6xl text-transparent stroke-text" style="-webkit-text-stroke: 1px #f3c41a;">06</span>
+                    <h2 class="font-headline font-black text-4xl uppercase tracking-tighter">MOKA</h2>
+                </div>
+                <div class="bg-[#0f141e] p-8 md:p-12 border border-white/5 relative group">
+                    <p class="font-sans text-lg text-white/80 leading-relaxed mb-10 pl-6 border-l-4 border-white/20">
+                        Un clásico de la estufa europea, la pequeña y atractiva olla Moka está regresando con los puristas del café.
+                    </p>
+                    <div class="bg-black/50 p-8 border border-white/5">
+                        <h4 class="font-mono text-primary text-xs uppercase tracking-[0.3em] font-bold mb-6">> SECUENCIA DE PREPARACIÓN</h4>
+                        <ol class="technical-steps font-mono text-sm text-white/70 leading-loose">
+                            <li>Moler 20 gr de café fino</li>
+                            <li>Desenrosca la olla Moka y llena la olla inferior con agua que esté recién preparada.</li>
+                            <li>Coloca el portafiltro en la parte superior de la olla inferior y agrega café. Tócala para asentar la cama.</li>
+                            <li>Pasa el dedo por el café para distribuirlo uniformemente, de izquierda a derecha y luego de adelante hacia atrás.</li>
+                            <li>Tornillo en la cámara superior. Usa una toalla para sostener el fondo, ya que ahora estará caliente.</li>
+                            <li>Pon la estufa a fuego medio. Con el calor correcto, la presión debe forzar una corriente de agua constante a través del café hacia la cámara superior. Demasiado poco calor resultará en una acción letárgica; si es frenético baja el calor. Cuando termines, escucharás un gorgoteo y un silbido cuando el agua se acabe.</li>
+                            <li>Vierte con cuidado (el asa a menudo está caliente debido al tamaño pequeño de la olla Moka) y disfruta de tu café.</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 07. V-60 -->
+            <section id="m-v60" class="scroll-mt-32">
+                <div class="flex items-end gap-6 border-b-4 border-primary pb-6 mb-8">
+                    <span class="font-headline font-black text-6xl text-transparent stroke-text" style="-webkit-text-stroke: 1px #f3c41a;">07</span>
+                    <h2 class="font-headline font-black text-4xl uppercase tracking-tighter">V-60</h2>
+                </div>
+                <div class="bg-[#0f141e] p-8 md:p-12 border border-white/5 relative group">
+                    <p class="font-sans text-lg text-white/80 leading-relaxed mb-10 pl-6 border-l-4 border-white/20">
+                        El clásico. Una de las mejores y más sencillas maneras de obtener el café en casa, con excelentes resultados.
+                    </p>
+                    <div class="bg-black/50 p-8 border border-white/5">
+                        <h4 class="font-mono text-primary text-xs uppercase tracking-[0.3em] font-bold mb-6">> SECUENCIA DE PREPARACIÓN</h4>
+                        <ol class="technical-steps font-mono text-sm text-white/70 leading-loose">
+                            <li>Deja hervir el doble de agua que necesitará (alrededor de 500 gr)</li>
+                            <li>Pesa 32 gr de granos de café y muele hasta obtener una tosquedad que recuerda a la sal marina.</li>
+                            <li>Pon el papel de filtro en su gotero, vierte la mitad del agua caliente en el filtro para asegurar la saturación y calentar los recipientes. Desecha después de un minuto más o menos. Deja que el agua restante en el hervidor se enfríe a aproximadamente 200 ° F.</li>
+                            <li>Vierte el café en el filtro y toca o agite para nivelar. Vierte 50-60 g de agua comenzando en el centro haciendo ejercicio y evitando verter los lados.</li>
+                            <li>Deja florecer durante 30 segundos.</li>
+                            <li>Continúa vertiendo lentamente (70-85 gr a la vez) durante unos 4 minutos, hasta que la escala indique 260 gr.</li>
+                        </ol>
+                        <p class="mt-8 font-headline font-black text-xl text-primary uppercase italic text-center">¡Quita la v-60 de la taza y disfruta de tu café!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 08. CAFETERA DE GOTEO -->
+            <section id="m-goteo" class="scroll-mt-32">
+                <div class="flex items-end gap-6 border-b-4 border-primary pb-6 mb-8">
+                    <span class="font-headline font-black text-6xl text-transparent stroke-text" style="-webkit-text-stroke: 1px #f3c41a;">08</span>
+                    <h2 class="font-headline font-black text-4xl uppercase tracking-tighter">CAFETERA DE GOTEO</h2>
+                </div>
+                <div class="bg-[#0f141e] p-8 md:p-12 border border-white/5 relative group">
+                    <p class="font-sans text-lg text-white/80 leading-relaxed mb-10 pl-6 border-l-4 border-white/20">
+                        Hacer café con una cafetera automática de goteo es una de las maneras más fáciles de preparar una taza de café.
+                    </p>
+                    <div class="bg-black/50 p-8 border border-white/5">
+                        <h4 class="font-mono text-primary text-xs uppercase tracking-[0.3em] font-bold mb-6">> SECUENCIA DE PREPARACIÓN</h4>
+                        <ol class="technical-steps font-mono text-sm text-white/70 leading-loose">
+                            <li>Moler el café a un tamaño de partícula medio-fino. Coloca el filtro de café en la cesta del filtro. Todas las cafeteras de goteo automáticas tienen una cesta de filtro que generalmente está justo debajo del cabezal de preparación (donde sale el agua caliente).</li>
+                            <li>Agrega una cucharada de café a un filtro de papel por cada taza (6 oz) de café que desee preparar. Si desea un café más rico y con más cuerpo, use un filtro permanente.</li>
+                            <li>Agrega agua fría y filtrada al depósito. Usa 6 onzas de agua por cada taza de café que desee hacer.</li>
+                            <li>Presiona el botón de inicio para comenzar el ciclo de preparación de la cafetera. La mayoría de las cafeteras de goteo automáticas tendrán un simple botón o interruptor de «inicio».</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0f141e] border-t border-white/5 py-12">
+        <div class="max-w-[1920px] mx-auto px-6 lg:px-12 text-center">
+            <img src="https://madnesscoffee.com/cdn/shop/files/logo-madness-amarillo.png?v=1669625636" alt="Madness Logo" class="h-8 mx-auto grayscale opacity-50">
+            <p class="font-mono text-[10px] text-white/20 mt-8 tracking-widest uppercase">
+                MADNESS COFFEE © 2026. SYS_END.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
